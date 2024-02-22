@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Image_Card
   - Texto_Card
+  - Melee_pos
+  - Range_pos
+  - Asedio_pos
+  - elven
   layers:
   - Default
   - TransparentFX
