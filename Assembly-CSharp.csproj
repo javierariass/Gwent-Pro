@@ -60,6 +60,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Cartas\General.cs" />
     <Compile Include="Assets\Scripts\Cartas\Mazo.cs" />
+    <Compile Include="Assets\Scripts\Cartas\Cartas_Unidad.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Estructura de Control del juego\Turn_by_Turn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

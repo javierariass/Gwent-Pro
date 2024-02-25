@@ -10,6 +10,14 @@ TagManager:
   - Range_pos
   - Asedio_pos
   - elven
+  - Elfo
+  - Manager
+  - Texto_power
+  - UI_Lore
+  - P1
+  - P2
+  - Texto_power2
+  - orc
   layers:
   - Default
   - TransparentFX
