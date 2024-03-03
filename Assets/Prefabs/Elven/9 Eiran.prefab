@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6940058789949542993}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.775, y: -4.2893, z: 0}
-  m_LocalScale: {x: 0.13885197, y: 0.13910247, z: 1}
+  m_LocalPosition: {x: -3.096815, y: -1.5455706, z: 0.012219042}
+  m_LocalScale: {x: 0.11735507, y: 0.11543637, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
+  UI_Descripcion: {fileID: 0}
   Type_card: 
   Lore: Elfo cuyo esprititu resplandece con la luz de los Bosques Eternos. Su espada
     esta imbuida con la energia de la vida y su habilidad para canalizar esta fuerza

@@ -18,6 +18,13 @@ TagManager:
   - P2
   - Texto_power2
   - orc
+  - Cuevita-land
+  - Melee_pos1
+  - Range_pos1
+  - Asedio_pos1
+  - Leader1
+  - Leader2
+  - Clima
   layers:
   - Default
   - TransparentFX

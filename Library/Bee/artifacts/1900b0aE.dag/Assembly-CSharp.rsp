@@ -337,6 +337,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/Cartas/Cartas_Clima.cs"
 "Assets/Scripts/Cartas/Cartas_Unidad.cs"
 "Assets/Scripts/Cartas/General.cs"
 "Assets/Scripts/Cartas/Mazo.cs"
