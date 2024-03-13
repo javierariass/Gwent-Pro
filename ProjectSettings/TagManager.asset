@@ -25,6 +25,13 @@ TagManager:
   - Leader1
   - Leader2
   - Clima
+  - Despeje_pos1
+  - Despeje_pos2
+  - Special1
+  - Special2
+  - Special3
+  - Special4
+  - Panel_efecto
   layers:
   - Default
   - TransparentFX

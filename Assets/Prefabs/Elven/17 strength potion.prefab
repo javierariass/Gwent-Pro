@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8091574510270440869}
   - component: {fileID: 4712546703222920204}
   - component: {fileID: 74414037847669221}
+  - component: {fileID: -8732823382508186894}
   m_Layer: 0
   m_Name: 17 strength potion
   m_TagString: Elfo
@@ -127,5 +128,21 @@ MonoBehaviour:
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
   Type_card: Increase
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: "Antiguo elixir cuya receta fue olvidada con los a\xF1os capaz de fortalecer
     a quien lo beba."
+--- !u!114 &-8732823382508186894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3216104234344568053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d52f1a3a83e71f41aa8c7d0ec7ae042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Afectados: Melee

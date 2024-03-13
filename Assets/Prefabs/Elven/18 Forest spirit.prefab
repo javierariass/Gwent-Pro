@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7912018727144643025}
   - component: {fileID: 6692484817050527864}
   - component: {fileID: 2057705319106200977}
+  - component: {fileID: 6285656136463748090}
   m_Layer: 0
   m_Name: 18 Forest spirit
   m_TagString: Elfo
@@ -127,5 +128,21 @@ MonoBehaviour:
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
   Type_card: Clearence
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: Lyra nacio de la escencia misma del bosque, nacida de la luz de la Luna y
     el susurro del viento. Representa la conexion entre el mundo natural y el espiritual.
+--- !u!114 &6285656136463748090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3542022812431247489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d52f1a3a83e71f41aa8c7d0ec7ae042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Afectados: Especiales

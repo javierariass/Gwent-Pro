@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Mazo : MonoBehaviour
@@ -9,7 +10,7 @@ public class Mazo : MonoBehaviour
     public GameObject[] Hand = new GameObject[10];
     private GameObject[] Card_Campo = new GameObject[12];
     private GameObject[] Melee_pos, Range_pos, Asedio_pos = new GameObject[4];
-    private GameObject LeaderPos,ClimaPos;
+    private GameObject LeaderPos,ClimaPos,Clearence_pos,Special_melee_pos,Special_range_pos;
     private GameManager manager;
     public GameObject Leader;
     private int carta_actual_deck = 0;
@@ -33,7 +34,10 @@ public class Mazo : MonoBehaviour
             Melee_pos = GameObject.FindGameObjectsWithTag("Melee_pos");
             Range_pos = GameObject.FindGameObjectsWithTag("Range_pos");
             Asedio_pos = GameObject.FindGameObjectsWithTag("Asedio_pos");
-            LeaderPos = GameObject.FindGameObjectWithTag("Leader1");            
+            LeaderPos = GameObject.FindGameObjectWithTag("Leader1");
+            Clearence_pos = GameObject.FindGameObjectWithTag("Despeje_pos1");
+            Special_melee_pos = GameObject.FindGameObjectWithTag("Special1");
+            Special_range_pos = GameObject.FindGameObjectWithTag("Special2");
         }
 
         if(gameObject.CompareTag("Cuevita-land"))
@@ -42,13 +46,16 @@ public class Mazo : MonoBehaviour
             Range_pos = GameObject.FindGameObjectsWithTag("Range_pos1");
             Asedio_pos = GameObject.FindGameObjectsWithTag("Asedio_pos1");
             LeaderPos = GameObject.FindGameObjectWithTag("Leader2");
+            Clearence_pos = GameObject.FindGameObjectWithTag("Despeje_pos2");
+            Special_melee_pos = GameObject.FindGameObjectWithTag("Special3");
+            Special_range_pos = GameObject.FindGameObjectWithTag("Special4");
         }
         GameObject.Instantiate(Leader, LeaderPos.transform.position, LeaderPos.transform.rotation);
         Leader.transform.localScale = LeaderPos.transform.localScale;
     }
 
     //Funcion barajear deck
-    static GameObject[] Barajear(GameObject[] mazo)
+    static void Barajear(GameObject[] mazo)
     {
         GameObject card;
 
@@ -59,8 +66,6 @@ public class Mazo : MonoBehaviour
             mazo[i] = mazo[d];
             mazo[d] = card;
         }
-
-        return mazo;
     }
 
     //Robar carta del mazo
@@ -150,11 +155,63 @@ public class Mazo : MonoBehaviour
                     Destroy(manager.clima);
                 }
                 manager.clima = card;
-                manager.clima.GetComponent<Cartas_Clima>().Elimnar_Clima_influence();
+                manager.clima.GetComponent<Cartas_Especiales>().Eliminar_Clima_influence();
                 card.transform.SetPositionAndRotation(ClimaPos.transform.position, ClimaPos.transform.rotation);
                 card.transform.localScale = ClimaPos.transform.localScale;
                 hecho = true;
             }
+
+            if(card.GetComponent<General>().Type_card == "Clearence")
+            {
+                card.transform.SetPositionAndRotation(Clearence_pos.transform.position, Clearence_pos.transform.rotation);
+                card.transform.localScale = Clearence_pos.transform.localScale;
+                card.GetComponent<Cartas_Especiales>().Despeje();
+                Destroy(card, 3);//Destruir carta despues de usar el efecto
+            }
+
+            //Verificar si la carta es de incremento
+            if(card.GetComponent<General>().Type_card == "Increase")
+            {
+                //Verificar tipo de aumento
+                if(card.GetComponent<Cartas_Especiales>().Afectados == "Melee")
+                {
+                    if (gameObject.CompareTag("elven") && manager.aumentos[0] == null || gameObject.CompareTag("Cuevita-land") && manager.aumentos[2] == null)
+                    {
+                        card.transform.SetPositionAndRotation(Special_melee_pos.transform.position, Special_melee_pos.transform.rotation);
+                        card.transform.localScale = Special_melee_pos.transform.localScale;
+                        hecho = true;
+                        if (gameObject.CompareTag("Elfo"))
+                        {
+                            manager.aumentos[0] = card;
+                        }
+                        else
+                        {
+                            manager.aumentos[2] = card;
+                        }
+                    }
+                    
+                }
+
+                if (card.GetComponent<Cartas_Especiales>().Afectados == "Range")
+                {
+                    if (gameObject.CompareTag("elven") && manager.aumentos[1] == null || gameObject.CompareTag("Cuevita-land") && manager.aumentos[3] == null)
+                    {
+                        card.transform.SetPositionAndRotation(Special_range_pos.transform.position, Special_range_pos.transform.rotation);
+                        card.transform.localScale = Special_range_pos.transform.localScale;
+                        hecho = true;
+                        if (gameObject.CompareTag("elven"))
+                        {
+                            manager.aumentos[1] = card;
+                        }
+                        else
+                        {
+                            manager.aumentos[3] = card;
+                        }
+                    }
+
+                }             
+            }
+
             //Si la carta fue invocada eliminar de la mano
             if (hecho)
             {
@@ -165,7 +222,7 @@ public class Mazo : MonoBehaviour
                         card.transform.parent = null;
                         for(int v = 0; v < manager.Cartas_Campo.Length; v++)
                         {
-                            if (manager.Cartas_Campo[v] == null && card.GetComponent<General>().Type_card != "Wheather")
+                            if (manager.Cartas_Campo[v] == null && card.GetComponent<General>().Type_card != "Wheather" && card.GetComponent<General>().Type_card != "Increase")
                             {
                                 manager.Cartas_Campo[v] = card;
                                 break;

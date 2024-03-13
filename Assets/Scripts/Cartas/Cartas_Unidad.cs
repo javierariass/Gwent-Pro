@@ -1,19 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Cartas_Unidad : MonoBehaviour
 {
     public int atk;
     public int habilidad = 0;
+    public GameObject Panel_De_Efecto;
 
     private void Start()
     {
-        if(habilidad != 0)
+        Panel_De_Efecto = GameObject.FindGameObjectWithTag("Panel_efecto");
+    }
+    private void Update()
+    {
+        if (gameObject.GetComponent<General>().invocada)
         {
-            activar_habilidad();
+            if (Input.GetMouseButtonDown(1))
+            {
+                Panel_De_Efecto.transform.localScale = Vector3.one;
+                GetComponent<General>().Desactivar_Descripcion();
+            }
         }
     }
+
     public void activar_habilidad()
     {
         switch (habilidad)

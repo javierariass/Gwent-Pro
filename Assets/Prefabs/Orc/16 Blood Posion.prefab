@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4201916856088474301}
   - component: {fileID: 9072558001028055806}
   - component: {fileID: 5486758501251761706}
+  - component: {fileID: 3890300963038640036}
   m_Layer: 0
   m_Name: 16 Blood Posion
   m_TagString: orc
@@ -127,5 +128,21 @@ MonoBehaviour:
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
   Type_card: Increase
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: Perteneciente al clan de los vampiros, otorga mejora de todos los sentidos
     en especial la vision.
+--- !u!114 &3890300963038640036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2227740190364910924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d52f1a3a83e71f41aa8c7d0ec7ae042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Afectados: Range

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5487274173245806039}
   - component: {fileID: 6783234347435488053}
   - component: {fileID: 5978414573095693445}
+  - component: {fileID: 6917437515317658031}
   m_Layer: 0
   m_Name: 17 Sauron
   m_TagString: orc
@@ -127,6 +128,22 @@ MonoBehaviour:
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
   Type_card: Clearence
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: Nacido como un poderoso espiritu en los albores del mundo, Sauron cayo en
     la oscuridad y la ambicion desmedida, convirtiendose en el antagonista mas temido
     y poderoso de la Tierra Media.
+--- !u!114 &6917437515317658031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798220197609382990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d52f1a3a83e71f41aa8c7d0ec7ae042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Afectados: Especiales

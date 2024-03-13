@@ -71,12 +71,27 @@ public class Turn_by_Turn : MonoBehaviour
 
     public void Vaciar_Campo()
     {
+
         for (int j = 0; j < gameManager.Cartas_Campo.Length; j++)
         {
             if (gameManager.Cartas_Campo[j] != null)
             {
                 Destroy(gameManager.Cartas_Campo[j]);
             }
+        }
+        for(int j = 0; j < gameManager.aumentos.Length;j++)
+        {
+            if (gameManager.aumentos[j] != null)
+            {
+                gameManager.aumentos[j].GetComponent<Cartas_Especiales>().Eliminar_Aumento_influence();
+                Destroy(gameManager.aumentos[j]);
+            }
+        }
+
+        if(gameManager.clima != null)
+        {
+            gameManager.clima.GetComponent<Cartas_Especiales>().Eliminar_Clima_influence();
+            Destroy(gameManager.clima);
         }
     }
 }
