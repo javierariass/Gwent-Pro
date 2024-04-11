@@ -29,7 +29,7 @@ public class Turn_by_Turn : MonoBehaviour
         else if (!gameManager.turn1_end)
         {
             gameManager.P2.SetActive(false); //Desactivar Camara jugador 2
-            gameManager.P1.SetActive(true);  //Activar Camara jugador 1           
+            gameManager.P1.SetActive(true);  //Activar Camara jugador 1
             if (!gameManager.turn1_end)
             {
                 gameManager.turno = 1;

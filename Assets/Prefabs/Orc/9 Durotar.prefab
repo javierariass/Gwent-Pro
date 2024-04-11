@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5112551466598201121}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
   m_LocalPosition: {x: -3.1311154, y: 1.7560295, z: 0.012219042}
-  m_LocalScale: {x: 0.14576331, y: 0.1484568, z: 1}
+  m_LocalScale: {x: 0.17940502, y: 0.21630695, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,7 +100,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Leader
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Leader
+  Type_Card: Leader
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
+  mover: 0
+  obj: {fileID: 0}
   Lore: Conocido por su brutalidad y sed de sangre. Liderando a las huestes de mordor,
     sembro el caos y la destruccion por donde pasaba convirtiendose en un simbolo
     de terror para aquellos que se atrevian a enfrentarlo.

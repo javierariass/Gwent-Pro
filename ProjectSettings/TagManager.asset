@@ -32,6 +32,7 @@ TagManager:
   - Special3
   - Special4
   - Panel_efecto
+  - Boton_Efecto
   layers:
   - Default
   - TransparentFX

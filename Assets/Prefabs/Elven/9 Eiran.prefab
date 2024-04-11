@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6940058789949542993}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.04955581, y: 0, z: 0, w: 0.99877137}
   m_LocalPosition: {x: -3.096815, y: -1.5455706, z: 0.012219042}
-  m_LocalScale: {x: 0.11735507, y: 0.11543637, z: 1}
+  m_LocalScale: {x: 0.13676128, y: 0.15358612, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.681, y: 0, z: 0}
 --- !u!212 &510586689805462218
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -126,7 +126,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: 
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Leader
+  Type_Card: Leader
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
+  mover: 0
+  obj: {fileID: 0}
   Lore: Elfo cuyo esprititu resplandece con la luz de los Bosques Eternos. Su espada
     esta imbuida con la energia de la vida y su habilidad para canalizar esta fuerza
     en combate lo convierte en un guerrero formidable.

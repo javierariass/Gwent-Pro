@@ -127,7 +127,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Wheather
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Wheather
+  Type_Card: Especiales
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: Tierras consumidas por la destruccion y la maldad donde solo perduran los
     gritos de las almas atrapadas.
 --- !u!114 &334720961946459057

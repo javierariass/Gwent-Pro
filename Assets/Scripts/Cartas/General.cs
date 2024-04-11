@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,9 +10,10 @@ public class General : MonoBehaviour
     private RawImage Image_Card;
     private TextMeshProUGUI descripcion;
     public GameObject Mazo,UI_Descripcion,Panel_De_Efecto;
-    public string Type_card;
-    public bool invocada,clima_influence,aumento_influence = false;
-
+    public string Type_Attack,Type_Card;
+    public bool invocada,clima_influence,aumento_influence,mover = false;
+    public GameObject obj;
+ 
     [TextArea(order = 10)] public string Lore;
 
     // Start is called before the first frame update
@@ -24,6 +26,13 @@ public class General : MonoBehaviour
         Panel_De_Efecto = GameObject.FindGameObjectWithTag("Panel_efecto"); //Localizar Panel para activar efecto.
     }
 
+    private void Update()
+    {
+        if(mover)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, obj.transform.position, 4 * Time.deltaTime);           
+        }
+    }
     //Asignar a que deck pertenece la carta
     private void Asignar_Mazo()
     {

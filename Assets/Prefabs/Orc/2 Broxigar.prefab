@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: 3
   habilidad: 0
+  Panel_De_Efecto: {fileID: 0}
+  Boton_Efecto: {fileID: 0}
 --- !u!114 &6826792409234600500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +143,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Range
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Range
+  Type_Card: Silver
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: Guerrero sanguinario cuya sed de sangre y poder lo convirtieron en un simbolo
     del mal.

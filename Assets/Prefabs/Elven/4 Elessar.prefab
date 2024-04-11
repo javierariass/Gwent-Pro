@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3141635867850723896}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.04955581, y: 0, z: 0, w: 0.99877137}
   m_LocalPosition: {x: -3.775, y: -4.2893, z: 0}
-  m_LocalScale: {x: 0.13885197, y: 0.13910247, z: 1}
+  m_LocalScale: {x: 0.13885197, y: 0.13635007, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.681, y: 0, z: 0}
 --- !u!212 &2274040014697319683
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -126,7 +126,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
-  Type_card: Melee
+  UI_Descripcion: {fileID: 0}
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Melee
+  Type_Card: Silver
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
+  mover: 0
+  obj: {fileID: 0}
   Lore: Elfo nacido en las altas copas de los bosques, desde joven mostro su excepcional
     talento en la esgrima. Su velociad y agilidad en combate le otorgaron el apodo
     "Hijo del viento"
@@ -144,3 +152,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: 3
   habilidad: 0
+  Panel_De_Efecto: {fileID: 0}
+  Boton_Efecto: {fileID: 0}

@@ -127,7 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Increase
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Increase
+  Type_Card: Especiales
   invocada: 0
   clima_influence: 0
   aumento_influence: 0

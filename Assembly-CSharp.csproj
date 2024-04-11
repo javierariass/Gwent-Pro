@@ -61,9 +61,11 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Cartas\General.cs" />
     <Compile Include="Assets\Scripts\Estructura de Control del juego\Turn_by_Turn.cs" />
+    <Compile Include="Assets\Scripts\Estructura de Control del juego\Boton_Efecto.cs" />
     <Compile Include="Assets\Scripts\Estructura de Control del juego\Start_Game.cs" />
     <Compile Include="Assets\Scripts\Cartas\Mazo.cs" />
     <Compile Include="Assets\Scripts\Cartas\Cartas_Unidad.cs" />
+    <Compile Include="Assets\Scripts\Estructura de Control del juego\Animator_Function.cs" />
     <Compile Include="Assets\Scripts\Estructura de Control del juego\Selected_card.cs" />
     <Compile Include="Assets\Scripts\Cartas\Cartas_Especiales.cs" />
   </ItemGroup>
@@ -953,6 +955,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">

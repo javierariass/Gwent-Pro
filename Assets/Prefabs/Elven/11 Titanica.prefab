@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5186717805520094384}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.04955581, y: 0, z: 0, w: 0.99877137}
   m_LocalPosition: {x: -3.775, y: -4.2893, z: 0}
-  m_LocalScale: {x: 0.13885197, y: 0.13910247, z: 1}
+  m_LocalScale: {x: 0.13885197, y: 0.13635007, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.681, y: 0, z: 0}
 --- !u!212 &1756452751881123392
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -126,7 +126,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
-  Type_card: Asedio
+  UI_Descripcion: {fileID: 0}
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Asedio
+  Type_Card: Silver
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
+  mover: 0
+  obj: {fileID: 0}
   Lore: 'Antigua ballesta usada por los ancestro para derribar dragones. '
 --- !u!114 &4438497477062240999
 MonoBehaviour:
@@ -142,3 +150,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: 5
   habilidad: 0
+  Panel_De_Efecto: {fileID: 0}
+  Boton_Efecto: {fileID: 0}

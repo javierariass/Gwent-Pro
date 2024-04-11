@@ -126,7 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atk: 6
-  habilidad: 0
+  habilidad: 3
+  Panel_De_Efecto: {fileID: 0}
+  Boton_Efecto: {fileID: 0}
 --- !u!114 &8596459507268173301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +143,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Melee
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Melee
+  Type_Card: Gold
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: Sacrificaba a sus propios seguidores en sangrientos rituales para obetener
     mayor poder. Su vision retorcida lo llevaron al camino de la depravacion y una
     crueldad inimaginables

@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: 3
   habilidad: 0
+  Panel_De_Efecto: {fileID: 0}
+  Boton_Efecto: {fileID: 0}
 --- !u!114 &4129801329751344280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +143,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Melee
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Melee
+  Type_Card: Silver
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: Sembraba la desolacion y la crueldad por doquier. su sed de poder lo convirtieron
     en una figura temida y odiada en igual medida por los orcos

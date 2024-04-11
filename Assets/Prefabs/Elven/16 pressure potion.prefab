@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8386518587624802981}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.04955581, y: 0, z: 0, w: 0.99877137}
   m_LocalPosition: {x: -0.94, y: -4.2733, z: 0}
   m_LocalScale: {x: 0.17623092, y: 0.18103324, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.681, y: 0, z: 0}
 --- !u!212 &6818141538531345927
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -127,10 +127,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Increase
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Increase
+  Type_Card: Efecto
   invocada: 0
   clima_influence: 0
   aumento_influence: 0
+  mover: 0
+  obj: {fileID: 0}
   Lore: Brebaje hecho con hierbas de los Sacros Bosques capaz de mejorar la vision
     al extremo.
 --- !u!114 &-7273643102730824454

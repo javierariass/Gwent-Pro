@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: 3
   habilidad: 0
+  Panel_De_Efecto: {fileID: 0}
+  Boton_Efecto: {fileID: 0}
 --- !u!114 &582879753370986052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +143,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Melee
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Melee
+  Type_Card: Silver
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: Orco poseido por entidades demoniacas se convirtio en un ser de pura maldad.
     Su sed de almas y necesidad de causar sufrimiento lo llevaron por un camino de
     destrucion y caos.

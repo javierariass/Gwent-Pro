@@ -127,7 +127,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Wheather
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Wheather
+  Type_Card: Especiales
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: "Tierras poseidas por la oscuridad, hogar de incontables criaturas del mal
     bajo el mando del se\xF1or oscuro Sauron."
 --- !u!114 &-6315049345444389977

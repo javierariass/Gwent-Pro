@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3542022812431247489}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.04955581, y: 0, z: 0, w: 0.99877137}
   m_LocalPosition: {x: -2.35, y: -4.2733, z: 0}
   m_LocalScale: {x: 0.17623092, y: 0.18103324, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.681, y: 0, z: 0}
 --- !u!212 &7912018727144643025
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -127,10 +127,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Clearence
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Clearence
+  Type_Card: Efecto
   invocada: 0
   clima_influence: 0
   aumento_influence: 0
+  mover: 0
+  obj: {fileID: 0}
   Lore: Lyra nacio de la escencia misma del bosque, nacida de la luz de la Luna y
     el susurro del viento. Representa la conexion entre el mundo natural y el espiritual.
 --- !u!114 &6285656136463748090

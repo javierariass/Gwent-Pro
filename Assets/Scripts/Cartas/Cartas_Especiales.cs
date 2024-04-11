@@ -11,12 +11,12 @@ public class Cartas_Especiales : MonoBehaviour
     void Update()
     {
         gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
-        if(gameObject.GetComponent<General>().invocada && gameObject.GetComponent<General>().Type_card == "Wheather")
+        if(gameObject.GetComponent<General>().invocada && gameObject.GetComponent<General>().Type_Attack == "Wheather")
         {
             Cambiar_Ataque(-1);
         }
 
-        if (gameObject.GetComponent<General>().invocada && gameObject.GetComponent<General>().Type_card == "Increase")
+        if (gameObject.GetComponent<General>().invocada && gameObject.GetComponent<General>().Type_Attack == "Increase")
         {
            Cambiar_Ataque(1);
         }
@@ -35,13 +35,13 @@ public class Cartas_Especiales : MonoBehaviour
             else
             {
                 datos = gameManager.Cartas_Campo[i].GetComponent<General>();
-                if (datos.Type_card == Afectados && !datos.clima_influence && gameObject.GetComponent<General>().Type_card == "Wheather")
+                if (datos.Type_Attack == Afectados && !datos.clima_influence && gameObject.GetComponent<General>().Type_Attack == "Wheather")
                 {
                     gameManager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk += power;
                     gameManager.Cartas_Campo[i].GetComponent<General>().clima_influence = true;
                 }
                 
-                else if (datos.Type_card == Afectados && !datos.aumento_influence && gameObject.GetComponent<General>().Type_card == "Increase")
+                else if (datos.Type_Attack == Afectados && !datos.aumento_influence && gameObject.GetComponent<General>().Type_Attack == "Increase")
                 {
                     if(gameObject.CompareTag("Elfo") && datos.gameObject.CompareTag("Elfo"))
                     {

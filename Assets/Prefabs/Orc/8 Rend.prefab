@@ -126,7 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atk: 5
-  habilidad: 0
+  habilidad: 4
+  Panel_De_Efecto: {fileID: 0}
+  Boton_Efecto: {fileID: 0}
 --- !u!114 &2446066171335706746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +143,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Range
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Range
+  Type_Card: Gold
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: Sedienta de batalla y conquista, no conocia la piedad ni la compasion. Sus
     actos atroces y despiadados la convierten en una figura temida

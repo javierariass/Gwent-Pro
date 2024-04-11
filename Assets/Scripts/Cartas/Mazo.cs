@@ -101,6 +101,7 @@ public class Mazo : MonoBehaviour
 
     //Invocar carta
     public bool Invocar(GameObject card)
+
     {
         if (manager.Turn_Invoque == false) //Verificar si este turno ya se invoco una carta
         {
@@ -110,10 +111,11 @@ public class Mazo : MonoBehaviour
                 //Verificar si queda casilla y si quedan invocar carta cuerpo a cuerpo
                 if(i < 4)
                 {
-                    if (Card_Campo[i] == null && card.GetComponent<General>().Type_card == "Melee")
+                    if (Card_Campo[i] == null && card.GetComponent<General>().Type_Attack == "Melee")
                     {
-                        card.transform.position = Melee_pos[i].transform.position;
-                        card.transform.localScale = Melee_pos[i].transform.localScale;
+                        card.GetComponent<General>().mover = true;
+                        card.GetComponent<General>().obj = Melee_pos[i];
+                        card.transform.rotation = Melee_pos[i].transform.rotation;
                         Card_Campo[i] = card;
                         hecho = true;
                         break;
@@ -123,10 +125,11 @@ public class Mazo : MonoBehaviour
                 //Verificar si queda casilla y si quedan invocar carta a distancia
                 if(i >= 4 && i < 8 )
                 {
-                    if (Card_Campo[i] == null && card.GetComponent<General>().Type_card == "Range")
+                    if (Card_Campo[i] == null && card.GetComponent<General>().Type_Attack == "Range")
                     {
-                        card.transform.position = Range_pos[i - 4].transform.position;
-                        card.transform.localScale = Range_pos[i - 4].transform.localScale;
+                        card.GetComponent<General>().mover = true;
+                        card.GetComponent<General>().obj = Range_pos[i - 4];
+                        card.transform.rotation = Range_pos[i - 4].transform.rotation;
                         Card_Campo[i] = card;
                         hecho = true;
                         break;
@@ -136,10 +139,11 @@ public class Mazo : MonoBehaviour
                 //Verificar si queda casilla y si quedan invocar carta de asedio
                 if (i >= 8)
                 {
-                    if (Card_Campo[i] == null && card.GetComponent<General>().Type_card == "Asedio")
+                    if (Card_Campo[i] == null && card.GetComponent<General>().Type_Attack == "Asedio")
                     {
-                        card.transform.position = Asedio_pos[i - 8].transform.position;
-                        card.transform.localScale = Asedio_pos[i - 8].transform.localScale;
+                        card.GetComponent<General>().mover = true;
+                        card.GetComponent<General>().obj = Asedio_pos[i - 8];
+                        card.transform.rotation = Asedio_pos[i - 8].transform.rotation;
                         Card_Campo[i] = card;
                         hecho = true;
                         break;
@@ -148,7 +152,7 @@ public class Mazo : MonoBehaviour
             }
 
             //Verificar si la carta es clima
-            if(card.GetComponent<General>().Type_card == "Wheather")
+            if(card.GetComponent<General>().Type_Attack == "Wheather")
             {
                 if (manager.clima != null)
                 {
@@ -161,7 +165,7 @@ public class Mazo : MonoBehaviour
                 hecho = true;
             }
 
-            if(card.GetComponent<General>().Type_card == "Clearence")
+            if(card.GetComponent<General>().Type_Attack == "Clearence")
             {
                 card.transform.SetPositionAndRotation(Clearence_pos.transform.position, Clearence_pos.transform.rotation);
                 card.transform.localScale = Clearence_pos.transform.localScale;
@@ -170,7 +174,7 @@ public class Mazo : MonoBehaviour
             }
 
             //Verificar si la carta es de incremento
-            if(card.GetComponent<General>().Type_card == "Increase")
+            if(card.GetComponent<General>().Type_Attack == "Increase")
             {
                 //Verificar tipo de aumento
                 if(card.GetComponent<Cartas_Especiales>().Afectados == "Melee")
@@ -214,7 +218,7 @@ public class Mazo : MonoBehaviour
 
             //Si la carta fue invocada eliminar de la mano
             if (hecho)
-            {
+            { 
                 for (int i = 0; i < Hand.Length; i++)
                 {
                     if (Hand[i] == card)
@@ -222,7 +226,7 @@ public class Mazo : MonoBehaviour
                         card.transform.parent = null;
                         for(int v = 0; v < manager.Cartas_Campo.Length; v++)
                         {
-                            if (manager.Cartas_Campo[v] == null && card.GetComponent<General>().Type_card != "Wheather" && card.GetComponent<General>().Type_card != "Increase")
+                            if (manager.Cartas_Campo[v] == null && card.GetComponent<General>().Type_Attack != "Wheather" && card.GetComponent<General>().Type_Attack != "Increase")
                             {
                                 manager.Cartas_Campo[v] = card;
                                 break;

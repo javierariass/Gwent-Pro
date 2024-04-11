@@ -126,7 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atk: 1
-  habilidad: 0
+  habilidad: 5
+  Panel_De_Efecto: {fileID: 0}
+  Boton_Efecto: {fileID: 0}
 --- !u!114 &8867679341013255295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +143,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Melee
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Melee
+  Type_Card: Silver
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: Orco astuto y ambicioso cuyas maquinaciones llevaron a la corrupcion de su
     propia raza.

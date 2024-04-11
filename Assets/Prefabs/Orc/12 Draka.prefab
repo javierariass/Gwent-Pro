@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: 0
   habilidad: 0
+  Panel_De_Efecto: {fileID: 0}
+  Boton_Efecto: {fileID: 0}
 --- !u!114 &348509251221079441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,5 +143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazo: {fileID: 0}
   UI_Descripcion: {fileID: 0}
-  Type_card: Lure
+  Panel_De_Efecto: {fileID: 0}
+  Type_Attack: Lure
+  Type_Card: Silver
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
   Lore: Simple desterrado de los orcos escogido como sacrificio en caso de ser necesario
