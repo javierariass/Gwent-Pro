@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2711432669415899205}
   - component: {fileID: 8734321709582421828}
   - component: {fileID: 2858496639273089428}
-  - component: {fileID: 3036651236919819929}
   - component: {fileID: 8597586599038356882}
+  - component: {fileID: 3036651236919819929}
   m_Layer: 0
   m_Name: 10 Blackhand
   m_TagString: orc
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4720775790529402198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.8569, y: -2.991, z: 0}
-  m_LocalScale: {x: 0.182888, y: 0.18318376, z: 1}
+  m_LocalScale: {x: 0.042432033, y: 0.051857974, z: 0.9999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 781835e353f747346a1e554c7d357e5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4b516b81df8d78429df84a6223e7f1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.8, y: 10.24}
+  m_Size: {x: 19.7125, y: 25.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,22 +97,45 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.1, y: 7.68}
-    newSize: {x: 6.8, y: 10.24}
+    oldSize: {x: 19.7125, y: 25.6}
+    newSize: {x: 19.7125, y: 25.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.1, y: 7.68}
+  m_Size: {x: 19.7125, y: 25.6}
   m_EdgeRadius: 0
+--- !u!114 &8597586599038356882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4720775790529402198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c755f2ab02b434e9139b725103c562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripcion: {fileID: 0}
+  Mazo: {fileID: 0}
+  Descripcion_GUI: {fileID: 0}
+  Type_Attack: Asedio
+  Type_Card: Silver
+  Name_Card: Blackhand
+  invocada: 0
+  clima_influence: 0
+  aumento_influence: 0
+  mover: 0
+  obj: {fileID: 0}
 --- !u!114 &3036651236919819929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,27 +150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: 5
   habilidad: 0
+  hability: 
   Panel_De_Efecto: {fileID: 0}
   Boton_Efecto: {fileID: 0}
---- !u!114 &8597586599038356882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4720775790529402198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00c755f2ab02b434e9139b725103c562, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mazo: {fileID: 0}
-  UI_Descripcion: {fileID: 0}
-  Panel_De_Efecto: {fileID: 0}
-  Type_Attack: Asedio
-  Type_Card: Silver
-  invocada: 0
-  clima_influence: 0
-  aumento_influence: 0
-  Lore: Orco colmado de rabia y sed de venganza incursionaba en los territorios enemigos
-    dejando una estela de destruccion a su paso.

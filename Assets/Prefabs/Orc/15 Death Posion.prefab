@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6513715847774314410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.35, y: -4.2733, z: 0}
-  m_LocalScale: {x: 0.17623092, y: 0.18103324, z: 1}
+  m_LocalScale: {x: 0.042432033, y: 0.051857974, z: 0.9999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1bbfd0119f30ec941aa31c763677a14a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b94f0e9ee876a94db5f2d63046aef7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.8, y: 10.24}
+  m_Size: {x: 19.7125, y: 25.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -104,14 +104,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.1, y: 7.68}
-    newSize: {x: 6.8, y: 10.24}
+    oldSize: {x: 19.7125, y: 25.6}
+    newSize: {x: 19.7125, y: 25.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.1, y: 7.68}
+  m_Size: {x: 19.7125, y: 25.6}
   m_EdgeRadius: 0
 --- !u!114 &2907039397879296835
 MonoBehaviour:
@@ -125,16 +125,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c755f2ab02b434e9139b725103c562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  descripcion: {fileID: 0}
   Mazo: {fileID: 0}
-  UI_Descripcion: {fileID: 0}
-  Panel_De_Efecto: {fileID: 0}
+  Descripcion_GUI: {fileID: 0}
   Type_Attack: Increase
   Type_Card: Especiales
+  Name_Card: 
   invocada: 0
   clima_influence: 0
   aumento_influence: 0
-  Lore: Antigua pocion perteneciente a algun clan maligno que empleaba horribles
-    metodos en su preparacion.
+  mover: 0
+  obj: {fileID: 0}
 --- !u!114 &-8684879872310191656
 MonoBehaviour:
   m_ObjectHideFlags: 0

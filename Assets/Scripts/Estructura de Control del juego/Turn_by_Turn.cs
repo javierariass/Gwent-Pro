@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Turn_by_Turn : MonoBehaviour
 {   
     private GameManager gameManager;
+    public TextMeshProUGUI Ganador;
+    private bool ronda = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,37 +17,39 @@ public class Turn_by_Turn : MonoBehaviour
     //Funcion cambio de turno
     public void Turn_Switch()
     {
-        Verificar_Ronda();
-        if(gameManager.turno == 1 && !gameManager.turn2_end)
+        if (!ronda)
         {
-            gameManager.P1.SetActive(false); //Desactivar Camara jugador 1
-            gameManager.P2.SetActive(true);  //Activar Camara jugador 2
-            
-            if(!gameManager.turn2_end)
+            Verificar_Ronda();
+            if (gameManager.turno == 1 && !gameManager.turn2_end)
             {
-                gameManager.turno = 2;
+                gameManager.P1.SetActive(false); //Desactivar Camara jugador 1
+                gameManager.P2.SetActive(true);  //Activar Camara jugador 2
+
+                if (!gameManager.turn2_end)
+                {
+                    gameManager.turno = 2;
+                }
+            }
+
+            else if (!gameManager.turn1_end)
+            {
+                gameManager.P2.SetActive(false); //Desactivar Camara jugador 2
+                gameManager.P1.SetActive(true);  //Activar Camara jugador 1
+                if (!gameManager.turn1_end)
+                {
+                    gameManager.turno = 1;
+                }
+            }
+            if (gameManager.turn1_end && gameManager.turn2_end)
+            {
+                End_Round();
+            }
+
+            else
+            {
+                gameManager.Turn_Invoque = false; //Permitir invocar carta
             }
         }
-
-        else if (!gameManager.turn1_end)
-        {
-            gameManager.P2.SetActive(false); //Desactivar Camara jugador 2
-            gameManager.P1.SetActive(true);  //Activar Camara jugador 1
-            if (!gameManager.turn1_end)
-            {
-                gameManager.turno = 1;
-            }
-        }
-        if (gameManager.turn1_end && gameManager.turn2_end)
-        {
-            End_Round();
-        }
-
-        else
-        {
-            gameManager.Turn_Invoque = false; //Permitir invocar carta
-        }
-        
     }
 
     public void Verificar_Ronda()
@@ -63,7 +68,11 @@ public class Turn_by_Turn : MonoBehaviour
     {
         gameManager.turn1_end = false;
         gameManager.turn2_end = false;
-        Debug.Log("Gana el jugador " + gameManager.Reset_Power());
+        Ganador.enabled = true;
+        Ganador.text = gameManager.Reset_Power();
+        StartCoroutine(Cambiar_Ronda());
+        gameManager.Turn_Invoque = true;
+        ronda = true;
         Vaciar_Campo();
         gameManager.mazo1.GetComponent<Mazo>().Robar(2);
         gameManager.mazo2.GetComponent<Mazo>().Robar(2);
@@ -88,10 +97,22 @@ public class Turn_by_Turn : MonoBehaviour
             }
         }
 
-        if(gameManager.clima != null)
+        for(int i = 0; i < gameManager.Climas.Length;i++)
         {
-            gameManager.clima.GetComponent<Cartas_Especiales>().Eliminar_Clima_influence();
-            Destroy(gameManager.clima);
+            if (gameManager.Climas[i] != null)
+            {
+                gameManager.Climas[i].GetComponent<Cartas_Especiales>().Eliminar_Clima_influence();
+                Destroy(gameManager.Climas[i]);
+            }
         }
+        
+    }
+
+    IEnumerator Cambiar_Ronda()
+    {
+        yield return new WaitForSeconds(3);
+        Ganador.enabled = false;
+        gameManager.Turn_Invoque = false;
+        ronda = false;
     }
 }

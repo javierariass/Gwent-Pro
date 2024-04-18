@@ -9,22 +9,21 @@ TagManager:
   - Melee_pos
   - Range_pos
   - Asedio_pos
-  - elven
+  - Lothlorien
   - Elfo
   - Manager
   - Texto_power
-  - UI_Lore
   - P1
   - P2
   - Texto_power2
   - orc
-  - Cuevita-land
+  - Gorthul
   - Melee_pos1
   - Range_pos1
   - Asedio_pos1
   - Leader1
   - Leader2
-  - Clima
+  - Despeje
   - Despeje_pos1
   - Despeje_pos2
   - Special1
@@ -33,6 +32,10 @@ TagManager:
   - Special4
   - Panel_efecto
   - Boton_Efecto
+  - Special5
+  - Special6
+  - text_lore
+  - lore
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class Cartas_Unidad : MonoBehaviour
 {
     public int atk;
     public int habilidad = 0;
+    public string hability;
     public GameObject Panel_De_Efecto,Boton_Efecto;
     GameManager Manager;
 
@@ -26,6 +28,10 @@ public class Cartas_Unidad : MonoBehaviour
                 Boton_Efecto.GetComponent<Boton_Efecto>().Carta = GetComponent<Cartas_Unidad>();
             }         
         }
+    }
+    private void OnMouseEnter()
+    {
+        GetComponent<General>().descripcion.text += "\n" + "Power: " + atk + "\n\n" + hability;
     }
     public void activar_habilidad()
     {
@@ -62,6 +68,7 @@ public class Cartas_Unidad : MonoBehaviour
                     
                 }
                 Destroy(Manager.Cartas_Campo[s]);
+                Manager.Turn_Invoque = true;
                 break;
 
             //Eliminar carta con menos poder del rival
@@ -87,6 +94,7 @@ public class Cartas_Unidad : MonoBehaviour
                    
                 }
                 Destroy(Manager.Cartas_Campo[d]);
+                Manager.Turn_Invoque = true;
                 break;
 
             //Multiplica por n su ataque siendo n la cantidad de cartas iguales a ella en el campo
@@ -103,6 +111,7 @@ public class Cartas_Unidad : MonoBehaviour
                     }
                 }
                 atk *= contador;
+                Manager.Turn_Invoque = true;
                 break;
 
             //Limpia la fila del campo (no vacia,propia o del rival) con menos unidades
@@ -113,6 +122,7 @@ public class Cartas_Unidad : MonoBehaviour
             //Robar una carta
             case 7:
                 GetComponent<General>().Mazo.GetComponent<Mazo>().Robar(1);
+                Manager.Turn_Invoque = true;
                 break;
 
             //Calcula el promedio entre todas las cartas del campo (propia o del rival). luego iguala el poder de todas las cartas del campo (propia o del rival) a ese promedio

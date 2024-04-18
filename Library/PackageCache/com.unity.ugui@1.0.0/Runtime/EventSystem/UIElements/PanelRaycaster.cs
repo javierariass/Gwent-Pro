@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 namespace UnityEngine.UIElements
 {
+    // This code is disabled unless the UI Toolkit package or the com.unity.modules.uielements module are present.
+    // The UIElements module is always present in the Editor but it can be stripped from a project build if unused.
 #if PACKAGE_UITOOLKIT
     /// <summary>
     /// A derived BaseRaycaster to raycast against UI Toolkit panel instances at runtime.
@@ -105,8 +107,6 @@ namespace UnityEngine.UIElements
             delta.y = -delta.y;
 
             var eventSystem = UIElementsRuntimeUtility.activeEventSystem as EventSystem;
-            if (eventSystem == null || eventSystem.currentInputModule == null)
-                return;
             var pointerId = eventSystem.currentInputModule.ConvertUIToolkitPointerId(eventData);
 
             var capturingElement = m_Panel.GetCapturingElement(pointerId);

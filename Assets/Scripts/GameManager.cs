@@ -9,8 +9,9 @@ public class GameManager : MonoBehaviour
     public int turno = 1; //1- Jugador 1, 2- Jugador 2
     public int ronda = 0;
     public GameObject P1, P2; //Camara jugadores
-    public GameObject mazo1, mazo2, clima;
-    public GameObject[] aumentos = new GameObject[4];
+    public GameObject mazo1, mazo2;
+    public GameObject[] aumentos = new GameObject[6];
+    public GameObject[] Climas = new GameObject[3];
     public GameObject[] HandBack1, HandBack2;
     public GameObject[] Cartas_Campo = new GameObject[24];
     private TextMeshProUGUI TextPower;
@@ -63,19 +64,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int Reset_Power()
+    public string Reset_Power()
     {
-        int jugador = 0;
+        string jugador = "";
 
         if(poder_jugador > poder_enemigo)
         {
-            jugador = 1;
+            jugador = "Jugador 1";
         }
         if(poder_jugador < poder_enemigo)
         {
-            jugador = 2;
+            jugador = "Jugador 2";
         }
         
+        if(poder_jugador == poder_enemigo)
+        {
+            jugador = "Empate";
+        }
         poder_enemigo = 0;
         poder_jugador = 0;
         return jugador;

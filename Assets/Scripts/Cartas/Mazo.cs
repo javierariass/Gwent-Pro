@@ -9,16 +9,16 @@ public class Mazo : MonoBehaviour
     public GameObject[] Hand_Pos = new GameObject[10];
     public GameObject[] Hand = new GameObject[10];
     private GameObject[] Card_Campo = new GameObject[12];
+    public GameObject[] ClimaPos = new GameObject[3];
     private GameObject[] Melee_pos, Range_pos, Asedio_pos = new GameObject[4];
-    private GameObject LeaderPos,ClimaPos,Clearence_pos,Special_melee_pos,Special_range_pos;
+    private GameObject LeaderPos,Clearence_pos,Special_melee_pos,Special_range_pos,Special_asedio_pos;
     private GameManager manager;
     public GameObject Leader;
     private int carta_actual_deck = 0;
     
     // Start is called before the first frame update
     void Start()
-    {
-        ClimaPos = GameObject.FindGameObjectWithTag("Clima");
+    {       
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
         Buscar_Lugares();
         Barajear(mazo);
@@ -29,27 +29,28 @@ public class Mazo : MonoBehaviour
     //Funcion para detectar posiciones donde poner las cartas
     private void Buscar_Lugares()
     {
-        if(gameObject.CompareTag("elven"))
+        if(gameObject.CompareTag("Lothlorien"))
         {
             Melee_pos = GameObject.FindGameObjectsWithTag("Melee_pos");
             Range_pos = GameObject.FindGameObjectsWithTag("Range_pos");
             Asedio_pos = GameObject.FindGameObjectsWithTag("Asedio_pos");
-            LeaderPos = GameObject.FindGameObjectWithTag("Leader1");
-            Clearence_pos = GameObject.FindGameObjectWithTag("Despeje_pos1");
+            LeaderPos = GameObject.FindGameObjectWithTag("Leader1");            
             Special_melee_pos = GameObject.FindGameObjectWithTag("Special1");
             Special_range_pos = GameObject.FindGameObjectWithTag("Special2");
+            Special_asedio_pos = GameObject.FindGameObjectWithTag("Special5");
         }
 
-        if(gameObject.CompareTag("Cuevita-land"))
+        if(gameObject.CompareTag("Gorthul"))
         {
             Melee_pos = GameObject.FindGameObjectsWithTag("Melee_pos1");
             Range_pos = GameObject.FindGameObjectsWithTag("Range_pos1");
             Asedio_pos = GameObject.FindGameObjectsWithTag("Asedio_pos1");
             LeaderPos = GameObject.FindGameObjectWithTag("Leader2");
-            Clearence_pos = GameObject.FindGameObjectWithTag("Despeje_pos2");
             Special_melee_pos = GameObject.FindGameObjectWithTag("Special3");
             Special_range_pos = GameObject.FindGameObjectWithTag("Special4");
+            Special_asedio_pos = GameObject.FindGameObjectWithTag("Special6");
         }
+        Clearence_pos = GameObject.FindGameObjectWithTag("Despeje");
         GameObject.Instantiate(Leader, LeaderPos.transform.position, LeaderPos.transform.rotation);
         Leader.transform.localScale = LeaderPos.transform.localScale;
     }
@@ -78,12 +79,12 @@ public class Mazo : MonoBehaviour
             if(Hand[i] == null)
             {
                 Hand[i] = GameObject.Instantiate(mazo[carta_actual_deck], Hand_Pos[i].transform.position, Hand_Pos[i].transform.rotation);
-                if(gameObject.CompareTag("elven"))
+                if(gameObject.CompareTag("Lothlorien"))
                 {
                     Hand[i].transform.parent = manager.P1.transform; // Localizar donde ubicar la carta si es elfo
                 }
 
-                if (gameObject.CompareTag("Cuevita-land"))
+                if (gameObject.CompareTag("Gorthul"))
                 {
                     Hand[i].transform.parent = manager.P2.transform; // Localizar donde ubicar la carta si es orco
                 }
@@ -154,23 +155,42 @@ public class Mazo : MonoBehaviour
             //Verificar si la carta es clima
             if(card.GetComponent<General>().Type_Attack == "Wheather")
             {
-                if (manager.clima != null)
+                if(card.GetComponent<Cartas_Especiales>().Afectados == "Melee" && manager.Climas[0] == null)
                 {
-                    Destroy(manager.clima);
+                    card.GetComponent<General>().obj = ClimaPos[0];
+                    card.transform.rotation = ClimaPos[0].transform.rotation;
+                    manager.Climas[0] = card;
+                    hecho = true;
                 }
-                manager.clima = card;
-                manager.clima.GetComponent<Cartas_Especiales>().Eliminar_Clima_influence();
-                card.transform.SetPositionAndRotation(ClimaPos.transform.position, ClimaPos.transform.rotation);
-                card.transform.localScale = ClimaPos.transform.localScale;
-                hecho = true;
+
+                if (card.GetComponent<Cartas_Especiales>().Afectados == "Range" && manager.Climas[1] == null)
+                {
+                    card.GetComponent<General>().obj = ClimaPos[1];
+                    card.transform.rotation = ClimaPos[0].transform.rotation;
+                    manager.Climas[1] = card;
+                    hecho = true;
+
+                }
+
+                if (card.GetComponent<Cartas_Especiales>().Afectados == "Asedio" && manager.Climas[2] == null)
+                {
+                    card.GetComponent<General>().obj = ClimaPos[1];
+                    hecho = true;
+                    manager.Climas[2] = card;
+                }
+
+                if (hecho)
+                {
+                    card.GetComponent<General>().mover = true;
+                }
             }
 
             if(card.GetComponent<General>().Type_Attack == "Clearence")
             {
-                card.transform.SetPositionAndRotation(Clearence_pos.transform.position, Clearence_pos.transform.rotation);
-                card.transform.localScale = Clearence_pos.transform.localScale;
+                card.GetComponent<General>().mover = true;
+                card.GetComponent<General>().obj = Clearence_pos;
                 card.GetComponent<Cartas_Especiales>().Despeje();
-                Destroy(card, 3);//Destruir carta despues de usar el efecto
+                Destroy(card, 3f);//Destruir carta despues de usar el efecto
             }
 
             //Verificar si la carta es de incremento
@@ -179,10 +199,11 @@ public class Mazo : MonoBehaviour
                 //Verificar tipo de aumento
                 if(card.GetComponent<Cartas_Especiales>().Afectados == "Melee")
                 {
-                    if (gameObject.CompareTag("elven") && manager.aumentos[0] == null || gameObject.CompareTag("Cuevita-land") && manager.aumentos[2] == null)
+                    if (gameObject.CompareTag("Lothlorien") && manager.aumentos[0] == null || gameObject.CompareTag("Gorthul") && manager.aumentos[2] == null)
                     {
-                        card.transform.SetPositionAndRotation(Special_melee_pos.transform.position, Special_melee_pos.transform.rotation);
-                        card.transform.localScale = Special_melee_pos.transform.localScale;
+                        card.GetComponent<General>().mover = true;
+                        card.GetComponent<General>().obj = Special_melee_pos;
+                        card.transform.rotation = Special_melee_pos.transform.rotation;
                         hecho = true;
                         if (gameObject.CompareTag("Elfo"))
                         {
@@ -198,12 +219,13 @@ public class Mazo : MonoBehaviour
 
                 if (card.GetComponent<Cartas_Especiales>().Afectados == "Range")
                 {
-                    if (gameObject.CompareTag("elven") && manager.aumentos[1] == null || gameObject.CompareTag("Cuevita-land") && manager.aumentos[3] == null)
+                    if (gameObject.CompareTag("Lothlorien") && manager.aumentos[1] == null || gameObject.CompareTag("Gorthul") && manager.aumentos[3] == null)
                     {
-                        card.transform.SetPositionAndRotation(Special_range_pos.transform.position, Special_range_pos.transform.rotation);
-                        card.transform.localScale = Special_range_pos.transform.localScale;
+                        card.GetComponent<General>().mover = true;
+                        card.GetComponent<General>().obj = Special_range_pos;
+                        card.transform.rotation = Special_range_pos.transform.rotation;
                         hecho = true;
-                        if (gameObject.CompareTag("elven"))
+                        if (gameObject.CompareTag("Lothlorien"))
                         {
                             manager.aumentos[1] = card;
                         }
@@ -213,7 +235,26 @@ public class Mazo : MonoBehaviour
                         }
                     }
 
-                }             
+                }
+                if (card.GetComponent<Cartas_Especiales>().Afectados == "Asedio")
+                {
+                    if (gameObject.CompareTag("Lothlorien") && manager.aumentos[4] == null || gameObject.CompareTag("Gorthul") && manager.aumentos[5] == null)
+                    {
+                        card.GetComponent<General>().mover = true;
+                        card.GetComponent<General>().obj = Special_asedio_pos;
+                        card.transform.rotation = Special_asedio_pos.transform.rotation;
+                        hecho = true;
+                        if (gameObject.CompareTag("Lothlorien"))
+                        {
+                            manager.aumentos[4] = card;
+                        }
+                        else
+                        {
+                            manager.aumentos[5] = card;
+                        }
+                    }
+
+                }
             }
 
             //Si la carta fue invocada eliminar de la mano

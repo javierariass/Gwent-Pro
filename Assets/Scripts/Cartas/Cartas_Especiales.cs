@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Cartas_Especiales : MonoBehaviour
@@ -21,7 +22,22 @@ public class Cartas_Especiales : MonoBehaviour
            Cambiar_Ataque(1);
         }
     }
-
+    private void OnMouseEnter()
+    {
+        GetComponent<General>().descripcion.text += "\n" + "Afected: " + Afectados + "\n";
+        if (gameObject.GetComponent<General>().Type_Attack == "Wheather")
+        {
+            GetComponent<General>().descripcion.text += "\nDisminuye en 1 el ataque de las cartas unidad tipo " + Afectados + "\n";
+        }
+        if (gameObject.GetComponent<General>().Type_Attack == "Increase")
+        {
+            GetComponent<General>().descripcion.text += "\nAumenta en 1 el ataque de las cartas unidad tipo " + Afectados + "\n";
+        }
+        if (gameObject.GetComponent<General>().Type_Attack == "Clearence")
+        {
+            GetComponent<General>().descripcion.text += "\nElimina las cartas del campo tipo " + Afectados + "\n";
+        }
+    }
     public void Cambiar_Ataque(int power)
     {
          
@@ -35,26 +51,28 @@ public class Cartas_Especiales : MonoBehaviour
             else
             {
                 datos = gameManager.Cartas_Campo[i].GetComponent<General>();
-                if (datos.Type_Attack == Afectados && !datos.clima_influence && gameObject.GetComponent<General>().Type_Attack == "Wheather")
+                if(datos.Type_Card != "Gold")
                 {
-                    gameManager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk += power;
-                    gameManager.Cartas_Campo[i].GetComponent<General>().clima_influence = true;
-                }
-                
-                else if (datos.Type_Attack == Afectados && !datos.aumento_influence && gameObject.GetComponent<General>().Type_Attack == "Increase")
-                {
-                    if(gameObject.CompareTag("Elfo") && datos.gameObject.CompareTag("Elfo"))
+                    if (datos.Type_Attack == Afectados && !datos.clima_influence && gameObject.GetComponent<General>().Type_Attack == "Wheather")
                     {
                         gameManager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk += power;
-                        gameManager.Cartas_Campo[i].GetComponent<General>().aumento_influence = true;
+                        gameManager.Cartas_Campo[i].GetComponent<General>().clima_influence = true;
                     }
-                    if (gameObject.CompareTag("orc") && datos.gameObject.CompareTag("orc"))
+
+                    else if (datos.Type_Attack == Afectados && !datos.aumento_influence && gameObject.GetComponent<General>().Type_Attack == "Increase")
                     {
-                        gameManager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk += power;
-                        gameManager.Cartas_Campo[i].GetComponent<General>().aumento_influence = true;
-                    }                   
-                }
-                
+                        if (gameObject.CompareTag("Elfo") && datos.gameObject.CompareTag("Elfo"))
+                        {
+                            gameManager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk += power;
+                            gameManager.Cartas_Campo[i].GetComponent<General>().aumento_influence = true;
+                        }
+                        if (gameObject.CompareTag("orc") && datos.gameObject.CompareTag("orc"))
+                        {
+                            gameManager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk += power;
+                            gameManager.Cartas_Campo[i].GetComponent<General>().aumento_influence = true;
+                        }
+                    }
+                }                              
             }
             
         }
@@ -70,6 +88,7 @@ public class Cartas_Especiales : MonoBehaviour
                 {
                     gameManager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk += 1;
                 }
+
                 gameManager.Cartas_Campo[i].GetComponent<General>().clima_influence = false;               
             }
         }
@@ -91,19 +110,12 @@ public class Cartas_Especiales : MonoBehaviour
     }
 
     public void Despeje()
-    {
-        for(int i = 0; i < gameManager.aumentos.Length;i++)
-        {
-            if (gameManager.aumentos[i] != null)
+    {   
+        for(int i = 0; i < gameManager.Climas.Length;i++)
+            if (gameManager.Climas[i] != null)
             {
-                Destroy(gameManager.aumentos[i]);
-                gameManager.aumentos[i] = null;
-            }          
-        }
-        if(gameManager.clima != null)
-        {
-            Destroy(gameManager.clima);
-            gameManager.clima = null;
-        }
+                Destroy(gameManager.Climas[i]);
+                gameManager.Climas[i] = null;
+            }
     }
 }
