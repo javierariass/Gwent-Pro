@@ -6,6 +6,7 @@ using UnityEngine;
 public class Turn_by_Turn : MonoBehaviour
 {   
     private GameManager gameManager;
+    public GameObject Continue;
     public TextMeshProUGUI Ganador;
     private bool ronda = false;
     // Start is called before the first frame update
@@ -48,6 +49,7 @@ public class Turn_by_Turn : MonoBehaviour
             else
             {
                 gameManager.Turn_Invoque = false; //Permitir invocar carta
+                gameManager.Lure = null;
             }
         }
     }
@@ -70,12 +72,16 @@ public class Turn_by_Turn : MonoBehaviour
         gameManager.turn2_end = false;
         Ganador.enabled = true;
         Ganador.text = gameManager.Reset_Power();
-        StartCoroutine(Cambiar_Ronda());
         gameManager.Turn_Invoque = true;
         ronda = true;
-        Vaciar_Campo();
-        gameManager.mazo1.GetComponent<Mazo>().Robar(2);
-        gameManager.mazo2.GetComponent<Mazo>().Robar(2);
+        if(!End_Game())
+        {
+            StartCoroutine(Cambiar_Ronda());
+            Vaciar_Campo();
+            gameManager.mazo1.GetComponent<Mazo>().Robar(2);
+            gameManager.mazo2.GetComponent<Mazo>().Robar(2);
+        }
+        
     }
 
     public void Vaciar_Campo()
@@ -108,6 +114,24 @@ public class Turn_by_Turn : MonoBehaviour
         
     }
 
+    public bool End_Game()
+    {
+        if (gameManager.ronda1 == 2)
+        {
+            Ganador.text = "Las fuerzas del bien han ganado la guerra";
+            Continue.SetActive(true);
+            return true;
+        }
+        if (gameManager.ronda2 == 2)
+        {
+            Ganador.text = "Las fuerzas del mal han ganado la guerra";
+            Continue.SetActive(true);
+
+            return true;
+        }
+
+        return false;
+    }
     IEnumerator Cambiar_Ronda()
     {
         yield return new WaitForSeconds(3);

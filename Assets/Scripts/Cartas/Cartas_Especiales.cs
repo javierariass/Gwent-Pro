@@ -51,7 +51,7 @@ public class Cartas_Especiales : MonoBehaviour
             else
             {
                 datos = gameManager.Cartas_Campo[i].GetComponent<General>();
-                if(datos.Type_Card != "Gold")
+                if(datos.Type_Card == "Silver")
                 {
                     if (datos.Type_Attack == Afectados && !datos.clima_influence && gameObject.GetComponent<General>().Type_Attack == "Wheather")
                     {

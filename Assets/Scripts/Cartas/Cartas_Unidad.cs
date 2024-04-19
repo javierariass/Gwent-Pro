@@ -9,125 +9,151 @@ public class Cartas_Unidad : MonoBehaviour
     public int atk;
     public int habilidad = 0;
     public string hability;
-    public GameObject Panel_De_Efecto,Boton_Efecto;
+    private bool Activado = false;
     GameManager Manager;
 
     private void Start()
     {
-        Panel_De_Efecto = GameObject.FindGameObjectWithTag("Panel_efecto");
-        Boton_Efecto = GameObject.FindGameObjectWithTag("Boton_Efecto");
-        Manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
+       Manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
     }
-    private void OnMouseDown()
+
+    private void Update()
     {
-        if (gameObject.GetComponent<General>().invocada && !Manager.Turn_Invoque && habilidad != 0)
+        if(!Activado && GetComponent<General>().invocada)
         {
-            if(gameObject.CompareTag("Elfo") && Manager.turno == 1 || gameObject.CompareTag("orc") && Manager.turno == 2)
-            {
-                Panel_De_Efecto.GetComponent<Animator>().SetBool("Activate", true); ;
-                Boton_Efecto.GetComponent<Boton_Efecto>().Carta = GetComponent<Cartas_Unidad>();
-            }         
+            StartCoroutine(Activacion_Time());
+            Activado = true;
         }
     }
     private void OnMouseEnter()
     {
         GetComponent<General>().descripcion.text += "\n" + "Power: " + atk + "\n\n" + hability;
     }
-    public void activar_habilidad()
+    public void Activar_habilidad()
     {
         switch (habilidad)
         {
-            //Poner aumento en fila
-            case 1:
-                break;
+            //Habilidad de los Elfos
 
-            //Poner una carta clima
-            case 2:
+            case 1: //Robar una carta
+                Manager.mazo1.GetComponent<Mazo>().Robar(1);
                 break;
-
-            //Eliminar la carta con mas poder del campo (propio o rival)
-            case 3:
-                int s = 0;
-                while(Manager.Cartas_Campo[s].GetComponent<General>().Type_Card == "Gold" && Manager.Cartas_Campo[s] != null)
+            case 2: //Elimina la carta con mas poder del campo
+                GameObject card = null;
+                int atk = 0;
+                int pos = 0;
+                for(int i = 0; i< Manager.Cartas_Campo.Length;i++)
                 {
-                    s++;
-                }
-                Cartas_Unidad unidad = Manager.Cartas_Campo[s].GetComponent<Cartas_Unidad>();
-                
-                for(int i = 0; i < Manager.Cartas_Campo.Length; i++)
-                {
-                    if (Manager.Cartas_Campo[i] != null)
+                    if(Manager.Cartas_Campo[i] != null)
                     {
-                        Cartas_Unidad uni = Manager.Cartas_Campo[i].GetComponent<Cartas_Unidad>();
-                        if (unidad.atk < uni.atk && uni.gameObject.GetComponent<General>().Type_Card != "Gold")
+                        if (Manager.Cartas_Campo[i].GetComponent<General>().Type_Card != "Gold")
                         {
-                            unidad = uni;
-                            s = i;
+                            if (Manager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk > atk)
+                            {
+                                card = Manager.Cartas_Campo[i];
+                                atk = Manager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk;
+                                pos = i;
+                            }
                         }
                     }
                     
                 }
-                Destroy(Manager.Cartas_Campo[s]);
-                Manager.Turn_Invoque = true;
-                break;
-
-            //Eliminar carta con menos poder del rival
-            case 4:
-                int d = 0;
-                while (Manager.Cartas_Campo[d].GetComponent<General>().Type_Card == "Gold" && !Manager.Cartas_Campo[d].CompareTag("Elfo"))
+                if(card != null)
                 {
-                    d++;
+                    Destroy(card);
+                    Manager.Cartas_Campo[pos] = null;
                 }
-
-                for (int i = 0; i < Manager.Cartas_Campo.Length; i++)
+                break;
+            case 3: //Invoca una carta clima al azar de la mano
+                for(int i = 0; i < Manager.mazo1.GetComponent<Mazo>().Hand.Length;i++)
                 {
-                    if(Manager.Cartas_Campo[i] != null)
+                    if(Manager.mazo1.GetComponent<Mazo>().Hand[i] != null)
                     {
-                        if (Manager.Cartas_Campo[i].CompareTag("Elfo"))
+                        if (Manager.mazo1.GetComponent<Mazo>().Hand[i].GetComponent<General>().Type_Attack == "Wheather")
                         {
-                            if (Manager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk < Manager.Cartas_Campo[d].GetComponent<Cartas_Unidad>().atk)
+                            Manager.Turn_Invoque = false;
+                            if (Manager.mazo1.GetComponent<Mazo>().Invocar(Manager.mazo1.GetComponent<Mazo>().Hand[i]))
                             {
-                                d = i;
+                                break;
                             }
                         }
-                    }
-                   
+                    }                   
                 }
-                Destroy(Manager.Cartas_Campo[d]);
                 Manager.Turn_Invoque = true;
                 break;
 
-            //Multiplica por n su ataque siendo n la cantidad de cartas iguales a ella en el campo
-            case 5:
-                int contador = 0;
+            //Habilidad de los orcos
+            case 4: //Multiplica su ataque por la cantidad de cartas igual a ella en el campo
+                int contador = 1;
                 for (int i = 0; i < Manager.Cartas_Campo.Length; i++)
                 {
                     if (Manager.Cartas_Campo[i] != null)
                     {
-                        if (Manager.Cartas_Campo[i].CompareTag("Elfo"))
+                        if (Manager.Cartas_Campo[i].GetComponent<General>().Name_Card == GetComponent<General>().Name_Card)
                         {
-                            contador++;
-                        }                     
+                            if (Manager.Cartas_Campo[i] != gameObject)
+                            {
+                                Manager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk += GetComponent<Cartas_Unidad>().atk;
+                                contador++;
+                            }
+                            
+                        }
                     }
                 }
-                atk *= contador;
+                GetComponent<Cartas_Unidad>().atk *= contador;
+                break;        
+            case 5: //Elimina la carta con menos poder del rival
+                GameObject cards = null;
+                int atks = 100;
+                int poss = 0;
+                for (int i = 0; i < Manager.Cartas_Campo.Length; i++)
+                {
+                    if (Manager.Cartas_Campo[i] != null)
+                    {
+                        if (Manager.Cartas_Campo[i].GetComponent<General>().Type_Card != "Gold")
+                        {
+                            if(Manager.Cartas_Campo[i].CompareTag("Elfo"))
+                            {
+                                if (Manager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk < atks)
+                                {
+                                    cards = Manager.Cartas_Campo[i];
+                                    atks = Manager.Cartas_Campo[i].GetComponent<Cartas_Unidad>().atk;
+                                    poss = i;
+                                }
+                            }                            
+                        }
+                    }
+
+                }
+                if (cards != null)
+                {
+                    Destroy(cards);
+                    Manager.Cartas_Campo[poss] = null;
+                }
+                break;
+            case 6: //Invoca una carta aumento de la mano al azar;
+                for (int i = 0; i < Manager.mazo2.GetComponent<Mazo>().Hand.Length; i++)
+                {
+                    if (Manager.mazo2.GetComponent<Mazo>().Hand[i] != null)
+                    {
+                        Manager.Turn_Invoque = false;
+                        if (Manager.mazo2.GetComponent<Mazo>().Hand[i].GetComponent<General>().Type_Attack == "Increase")
+                        {
+                            if (Manager.mazo2.GetComponent<Mazo>().Invocar(Manager.mazo2.GetComponent<Mazo>().Hand[i]))
+                            {
+                                break;
+                            }
+                        }
+                    }                  
+                }
                 Manager.Turn_Invoque = true;
-                break;
-
-            //Limpia la fila del campo (no vacia,propia o del rival) con menos unidades
-            case 6:
-               
-                break;
-
-            //Robar una carta
-            case 7:
-                GetComponent<General>().Mazo.GetComponent<Mazo>().Robar(1);
-                Manager.Turn_Invoque = true;
-                break;
-
-            //Calcula el promedio entre todas las cartas del campo (propia o del rival). luego iguala el poder de todas las cartas del campo (propia o del rival) a ese promedio
-            case 8:
                 break;
         }
+    }
+
+    IEnumerator Activacion_Time()
+    {
+        yield return new WaitForSeconds(1f);
+        Activar_habilidad();
     }
 }

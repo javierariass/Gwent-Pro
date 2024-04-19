@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class General : MonoBehaviour
 {
@@ -13,7 +15,7 @@ public class General : MonoBehaviour
     public string Type_Attack,Type_Card,Name_Card;
     public bool invocada,clima_influence,aumento_influence,mover = false;
     public GameObject obj;
- 
+    public GameManager gameManager;
    
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class General : MonoBehaviour
         Image_Card = GameObject.FindGameObjectWithTag("Image_Card").GetComponent<RawImage>(); //Localizar elemento UI para mostrar imagen de la carta
         Descripcion_GUI = GameObject.FindGameObjectWithTag("lore");
         descripcion = GameObject.FindGameObjectWithTag("text_lore").GetComponent<TextMeshProUGUI>();
+        gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
     }
 
     private void Update()
@@ -73,10 +76,56 @@ public class General : MonoBehaviour
 
     //Click para invocar carta
     private void OnMouseDown()
-    {       
+    {
+        bool ya = false;
         if(!invocada)
         {
-            invocada = Mazo.GetComponent<Mazo>().Invocar(gameObject);                                       
+            invocada = Mazo.GetComponent<Mazo>().Invocar(gameObject);
+            ya = true;
+        }
+
+        if (invocada && gameManager.Lure != null && Type_Card != "Lure" && !ya && !gameManager.Turn_Invoque)
+        {
+            if(gameManager.Lure.CompareTag(gameObject.tag) )
+            {
+                if(Type_Card == "Silver" || Type_Card == "Gold")
+                {
+                    GameObject card = gameManager.Lure;
+                    mover = false;
+                    card.transform.position = gameObject.transform.position;
+                    card.transform.localScale = gameObject.transform.localScale;
+                    card.transform.rotation = gameObject.transform.rotation;
+                    gameObject.transform.position = Mazo.GetComponent<Mazo>().Hand_Pos[gameManager.Pos_lure].transform.position;
+                    card.transform.parent = null;
+                    if(CompareTag("Elfo"))
+                    {
+                        gameObject.transform.SetParent(gameManager.P1.transform);
+                    }
+                    else
+                    {
+                        gameObject.transform.SetParent(gameManager.P2.transform);
+                    }
+                    invocada = false;
+                    gameManager.Turn_Invoque = true;
+                    for (int i = 0; i < Mazo.GetComponent<Mazo>().Hand.Length; i++)
+                    {
+                        if (Mazo.GetComponent<Mazo>().Hand[i] == card)
+                        {
+                            Mazo.GetComponent<Mazo>().Hand[i] = gameObject;
+                        }
+                    }
+                    for (int i = 0; i < gameManager.Cartas_Campo.Length; i++)
+                    {
+                        if (gameManager.Cartas_Campo[i] == gameObject)
+                        {
+                            gameManager.Cartas_Campo[i] = card;
+                        }
+                        gameManager.Turn_Invoque = true;
+                    }
+                }
+                
+            }               
         }
     }
+
 }

@@ -22,7 +22,6 @@ public class Mazo : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
         Buscar_Lugares();
         Barajear(mazo);
-        Robar(10);
     }
     
 
@@ -175,6 +174,7 @@ public class Mazo : MonoBehaviour
                 if (card.GetComponent<Cartas_Especiales>().Afectados == "Asedio" && manager.Climas[2] == null)
                 {
                     card.GetComponent<General>().obj = ClimaPos[1];
+                    card.transform.rotation = ClimaPos[0].transform.rotation;
                     hecho = true;
                     manager.Climas[2] = card;
                 }
@@ -184,7 +184,7 @@ public class Mazo : MonoBehaviour
                     card.GetComponent<General>().mover = true;
                 }
             }
-
+            //Verificar si es de despeje
             if(card.GetComponent<General>().Type_Attack == "Clearence")
             {
                 card.GetComponent<General>().mover = true;
@@ -192,7 +192,6 @@ public class Mazo : MonoBehaviour
                 card.GetComponent<Cartas_Especiales>().Despeje();
                 Destroy(card, 3f);//Destruir carta despues de usar el efecto
             }
-
             //Verificar si la carta es de incremento
             if(card.GetComponent<General>().Type_Attack == "Increase")
             {
@@ -256,7 +255,17 @@ public class Mazo : MonoBehaviour
 
                 }
             }
-
+            if (card.GetComponent<General>().Type_Attack == "Lure")
+            {
+                manager.Lure = card;
+                for (int i = 0; i < Hand.Length; i++)
+                {
+                    if (Hand[i] == card)
+                    {
+                        manager.Pos_lure = i;
+                    }
+                }
+            }
             //Si la carta fue invocada eliminar de la mano
             if (hecho)
             { 
@@ -279,6 +288,7 @@ public class Mazo : MonoBehaviour
                     }
                 }
             }
+            
         }       
         return false;
     }    

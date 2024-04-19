@@ -7,7 +7,6 @@ using UnityEngine.XR;
 public class GameManager : MonoBehaviour
 {
     public int turno = 1; //1- Jugador 1, 2- Jugador 2
-    public int ronda = 0;
     public GameObject P1, P2; //Camara jugadores
     public GameObject mazo1, mazo2;
     public GameObject[] aumentos = new GameObject[6];
@@ -18,9 +17,14 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI TextPower2;
     int poder_jugador = 0;
     int poder_enemigo = 0;
+    public int ronda1, ronda2 = 0;
     public int cartas_Selected = 0;
     public bool Turn_Invoque, turn1_end, turn2_end = false;
+    public bool inicio1, inicio2 = true;
     
+    //Señuelo
+    public GameObject Lure = null;
+    public int Pos_lure;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +36,14 @@ public class GameManager : MonoBehaviour
     {
         Power();
         Cartas_Back_Check();
+        if(inicio1 && turno == 1)
+        {
+            Turn_Invoque = true;
+        }
+        if (inicio2 && turno == 2)
+        {
+            Turn_Invoque = true;
+        }
     }
     public void Power()
     {
@@ -71,10 +83,12 @@ public class GameManager : MonoBehaviour
         if(poder_jugador > poder_enemigo)
         {
             jugador = "Jugador 1";
+            ronda1++;
         }
         if(poder_jugador < poder_enemigo)
         {
             jugador = "Jugador 2";
+            ronda2++;
         }
         
         if(poder_jugador == poder_enemigo)
@@ -83,6 +97,8 @@ public class GameManager : MonoBehaviour
         }
         poder_enemigo = 0;
         poder_jugador = 0;
+        ronda1++;
+        ronda2++;
         return jugador;
     }
 

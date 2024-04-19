@@ -58,7 +58,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\Estructura de Control del juego\Menu.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Cartas\General.cs" />
     <Compile Include="Assets\Scripts\Estructura de Control del juego\Turn_by_Turn.cs" />
@@ -66,9 +66,13 @@
     <Compile Include="Assets\Scripts\Cartas\Mazo.cs" />
     <Compile Include="Assets\Scripts\Cartas\Cartas_Unidad.cs" />
     <Compile Include="Assets\Scripts\Estructura de Control del juego\Animator_Function.cs" />
+    <Compile Include="Assets\Scripts\End_Game.cs" />
     <Compile Include="Assets\Scripts\Estructura de Control del juego\Selected_card.cs" />
     <Compile Include="Assets\Scripts\Cartas\Cartas_Especiales.cs" />
-    <Compile Include="Assets\Scripts\Camara_video_Controller.cs" />
+    <Compile Include="Assets\Scripts\Estructura de Control del juego\Camara_video_Controller.cs" />
+    <Compile Include="Assets\Scripts\Cartas\Cartas_Leader.cs" />
+    <Compile Include="Assets\Scripts\Start_Game.cs" />
+    <Compile Include="Assets\Scripts\Trash_Card.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

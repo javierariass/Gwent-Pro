@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atk: 7
-  habilidad: 7
+  habilidad: 1
   hability: Permite robar una carta
   Panel_De_Efecto: {fileID: 0}
   Boton_Efecto: {fileID: 0}

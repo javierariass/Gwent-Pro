@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atk: 5
-  habilidad: 4
-  hability: 
+  habilidad: 6
+  hability: Invoca una carta aumento de la mano al azar
   Panel_De_Efecto: {fileID: 0}
   Boton_Efecto: {fileID: 0}

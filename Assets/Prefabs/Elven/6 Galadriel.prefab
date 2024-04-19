@@ -150,6 +150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: 5
   habilidad: 3
-  hability: Elimina la carta con mas poder del campo (propio o rival)
+  hability: Invoca una carta clima al azar de la mano
   Panel_De_Efecto: {fileID: 0}
   Boton_Efecto: {fileID: 0}

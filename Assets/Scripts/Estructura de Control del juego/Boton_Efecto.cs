@@ -8,7 +8,7 @@ public class Boton_Efecto : MonoBehaviour
 
     public void Activar()
     {
-        Carta.activar_habilidad();
+        Carta.Activar_habilidad();
         Cerrar_Panel();
 
     }

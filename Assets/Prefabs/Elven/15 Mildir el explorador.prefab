@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 784026653391722388}
   - component: {fileID: 8513504975876406518}
   - component: {fileID: 6981294347375890066}
-  - component: {fileID: 15069373256194410}
   - component: {fileID: 174331922225242721}
+  - component: {fileID: 15069373256194410}
   m_Layer: 0
   m_Name: 15 Mildir el explorador
   m_TagString: Elfo
@@ -113,22 +113,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.85, y: 12.8}
   m_EdgeRadius: 0
---- !u!114 &15069373256194410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144281607915921733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c66dc031e9cf91e4081792163f1e4c37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atk: 0
-  habilidad: 0
-  Panel_De_Efecto: {fileID: 0}
-  Boton_Efecto: {fileID: 0}
 --- !u!114 &174331922225242721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,3 +136,19 @@ MonoBehaviour:
   aumento_influence: 0
   mover: 0
   obj: {fileID: 0}
+  gameManager: {fileID: 0}
+--- !u!114 &15069373256194410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144281607915921733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66dc031e9cf91e4081792163f1e4c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atk: 0
+  habilidad: 0
+  hability: Seleciona carta del campo y cambiala por esta

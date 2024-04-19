@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atk: 2
-  habilidad: 5
-  hability: 
+  habilidad: 4
+  hability: Multiplica su ataque por la cantidad de cartas igual a ella en el campo
   Panel_De_Efecto: {fileID: 0}
   Boton_Efecto: {fileID: 0}

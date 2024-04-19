@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atk: 6
-  habilidad: 3
-  hability: 
+  habilidad: 5
+  hability: Elimina la carta con menos poder del rival
   Panel_De_Efecto: {fileID: 0}
   Boton_Efecto: {fileID: 0}
