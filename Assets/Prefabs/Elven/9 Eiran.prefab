@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5319227471647756652}
   - component: {fileID: 8218574464813275825}
   - component: {fileID: 4537792086073054109}
+  - component: {fileID: 6128088974206077363}
   m_Layer: 0
   m_Name: 9 Eiran
   m_TagString: Elfo
@@ -124,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c755f2ab02b434e9139b725103c562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  descripcion: {fileID: 0}
   Mazo: {fileID: 0}
   Descripcion_GUI: {fileID: 0}
   Type_Attack: 
@@ -134,3 +136,19 @@ MonoBehaviour:
   aumento_influence: 0
   mover: 0
   obj: {fileID: 0}
+  gameManager: {fileID: 0}
+--- !u!114 &6128088974206077363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3356391611871324663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d9b8653ed9fe640af928baa592809a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Habilidad: Elimina todas las cartas aumentos de campo
+  num: 1
+  manager: {fileID: 0}

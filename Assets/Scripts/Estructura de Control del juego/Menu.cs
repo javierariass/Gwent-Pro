@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && CompareTag("Button_Tag"))
         {
             menu.transform.localScale = Vector3.one;
         }

@@ -36,8 +36,8 @@ public class Start_Game : MonoBehaviour
             {
                 image[i].texture = mazo2.Hand[i].GetComponent<SpriteRenderer>().sprite.texture;
                 image[i].transform.localScale = Vector3.one;
-                GameObject.transform.localScale = Vector3.one;
             }
+            GameObject.transform.localScale = Vector3.one;
             GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>().Turn_Invoque = true;
             cant = 0;
         }
@@ -62,7 +62,6 @@ public class Start_Game : MonoBehaviour
         {
             if(image[i].texture != null)
             {
-                image[i].texture = mazo1.Hand[i].GetComponent<SpriteRenderer>().sprite.texture;
                 image[i].transform.localScale = Vector3.zero;
                 GameObject.transform.localScale = Vector3.zero;
             }

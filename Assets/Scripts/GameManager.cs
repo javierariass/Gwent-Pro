@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] Cartas_Campo = new GameObject[24];
     private TextMeshProUGUI TextPower;
     private TextMeshProUGUI TextPower2;
-    int poder_jugador = 0;
-    int poder_enemigo = 0;
+    public int poder_jugador = 0;
+    public int poder_enemigo = 0;
     public int ronda1, ronda2 = 0;
     public int cartas_Selected = 0;
     public bool Turn_Invoque, turn1_end, turn2_end = false;
@@ -36,14 +36,6 @@ public class GameManager : MonoBehaviour
     {
         Power();
         Cartas_Back_Check();
-        if(inicio1 && turno == 1)
-        {
-            Turn_Invoque = true;
-        }
-        if (inicio2 && turno == 2)
-        {
-            Turn_Invoque = true;
-        }
     }
     public void Power()
     {

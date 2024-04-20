@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9039132075482761163}
   - component: {fileID: 716587681888833152}
   - component: {fileID: 1445396437580233133}
+  - component: {fileID: 1779330356869147228}
   m_Layer: 0
   m_Name: 9 Durotar
   m_TagString: orc
@@ -109,6 +110,7 @@ MonoBehaviour:
   aumento_influence: 0
   mover: 0
   obj: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!61 &1445396437580233133
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -135,3 +137,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 19.7125, y: 25.6}
   m_EdgeRadius: 0
+--- !u!114 &1779330356869147228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112551466598201121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d9b8653ed9fe640af928baa592809a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Habilidad: Permite Robar una carta extra
+  num: 2
+  manager: {fileID: 0}

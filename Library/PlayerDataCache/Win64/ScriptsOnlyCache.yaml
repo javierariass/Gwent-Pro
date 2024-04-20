@@ -1,15 +1,17 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Animator_Function
     - Boton_Efecto
     - Camara_video_Controller
     - Cartas_Especiales
     - Cartas_Unidad
+    - End_Game
     - GameManager
     - General
     - Mazo
     - Menu
+    - Start_Game
+    - Trash_Card
     - Turn_by_Turn
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -83,14 +85,68 @@ ScriptsOnlyBuild:
     fullTypeName: Menu
     methodName: Creditos
   - assembly: Assembly-CSharp
+    fullTypeName: Trash_Card
+    methodName: Activar
+  - assembly: Assembly-CSharp
+    fullTypeName: Trash_Card
+    methodName: Activar
+  - assembly: Assembly-CSharp
+    fullTypeName: Trash_Card
+    methodName: Activar
+  - assembly: Assembly-CSharp
+    fullTypeName: Trash_Card
+    methodName: Activar
+  - assembly: Assembly-CSharp
+    fullTypeName: Start_Game
+    methodName: Cerrar
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: Volver
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: Cerrar_Panel
+  - assembly: Assembly-CSharp
     fullTypeName: Boton_Efecto
+    methodName: Activar
+  - assembly: Assembly-CSharp
+    fullTypeName: Trash_Card
+    methodName: Activar
+  - assembly: Assembly-CSharp
+    fullTypeName: Trash_Card
+    methodName: Activar
+  - assembly: Assembly-CSharp
+    fullTypeName: Trash_Card
     methodName: Activar
   - assembly: Assembly-CSharp
     fullTypeName: Turn_by_Turn
     methodName: Turn_Switch
   - assembly: Assembly-CSharp
+    fullTypeName: Start_Game
+    methodName: Colocar
+  - assembly: Assembly-CSharp
+    fullTypeName: Trash_Card
+    methodName: Activar
+  - assembly: Assembly-CSharp
+    fullTypeName: Trash_Card
+    methodName: Activar
+  - assembly: Assembly-CSharp
+    fullTypeName: Trash_Card
+    methodName: Activar
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: End_Game
+  - assembly: Assembly-CSharp
     fullTypeName: Boton_Efecto
     methodName: Cerrar_Panel
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: Volver
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: Volver
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: Volver
   sceneClasses:
     Assets/Scenes/Creditos.unity:
     - Class: 1
@@ -99,15 +155,110 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1592}
+    - Class: 114
+      Script: {instanceID: 1860}
+    - Class: 114
+      Script: {instanceID: 2550}
+    - Class: 114
+      Script: {instanceID: 2740}
+    - Class: 114
+      Script: {instanceID: 3016}
+    - Class: 114
+      Script: {instanceID: 4868}
+    - Class: 114
+      Script: {instanceID: 5384}
+    - Class: 114
+      Script: {instanceID: 5536}
+    - Class: 114
+      Script: {instanceID: 5840}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 328
+      Script: {instanceID: 0}
+    - Class: 329
+      Script: {instanceID: 0}
+    Assets/Scenes/End_Game.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1592}
+    - Class: 114
+      Script: {instanceID: 1860}
+    - Class: 114
+      Script: {instanceID: 2550}
+    - Class: 114
+      Script: {instanceID: 2740}
+    - Class: 114
+      Script: {instanceID: 3016}
+    - Class: 114
+      Script: {instanceID: 4868}
+    - Class: 114
+      Script: {instanceID: 5384}
+    - Class: 114
+      Script: {instanceID: 5400}
+    - Class: 114
+      Script: {instanceID: 5536}
+    - Class: 114
+      Script: {instanceID: 5840}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 328
       Script: {instanceID: 0}
@@ -134,6 +285,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -143,37 +296,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1592}
     - Class: 114
-      Script: {instanceID: 2226}
+      Script: {instanceID: 1860}
     - Class: 114
-      Script: {instanceID: 2272}
+      Script: {instanceID: 2228}
     - Class: 114
-      Script: {instanceID: 2548}
+      Script: {instanceID: 2274}
     - Class: 114
-      Script: {instanceID: 2738}
+      Script: {instanceID: 2550}
     - Class: 114
-      Script: {instanceID: 3014}
+      Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 3172}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 3276}
+      Script: {instanceID: 3174}
     - Class: 114
-      Script: {instanceID: 4156}
+      Script: {instanceID: 3278}
     - Class: 114
-      Script: {instanceID: 4584}
+      Script: {instanceID: 3438}
     - Class: 114
-      Script: {instanceID: 4614}
+      Script: {instanceID: 4160}
     - Class: 114
-      Script: {instanceID: 4866}
+      Script: {instanceID: 4586}
     - Class: 114
-      Script: {instanceID: 5356}
+      Script: {instanceID: 4616}
     - Class: 114
-      Script: {instanceID: 5380}
+      Script: {instanceID: 4868}
     - Class: 114
-      Script: {instanceID: 5530}
+      Script: {instanceID: 5384}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5536}
     - Class: 114
-      Script: {instanceID: 5896}
+      Script: {instanceID: 5840}
+    - Class: 114
+      Script: {instanceID: 5902}
+    - Class: 114
+      Script: {instanceID: 6072}
+    - Class: 114
+      Script: {instanceID: 6830}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -218,29 +377,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1592}
     - Class: 114
-      Script: {instanceID: 2140}
+      Script: {instanceID: 1860}
     - Class: 114
-      Script: {instanceID: 2548}
+      Script: {instanceID: 2142}
     - Class: 114
-      Script: {instanceID: 2738}
+      Script: {instanceID: 2550}
     - Class: 114
-      Script: {instanceID: 3014}
+      Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 3954}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 4198}
+      Script: {instanceID: 3958}
     - Class: 114
-      Script: {instanceID: 4866}
+      Script: {instanceID: 4202}
     - Class: 114
-      Script: {instanceID: 5380}
+      Script: {instanceID: 4868}
     - Class: 114
-      Script: {instanceID: 5530}
+      Script: {instanceID: 5384}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5536}
     - Class: 114
-      Script: {instanceID: 32652}
+      Script: {instanceID: 5840}
     - Class: 114
-      Script: {instanceID: 40596}
+      Script: {instanceID: 6830}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -268,15 +427,53 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1592}
+    - Class: 114
+      Script: {instanceID: 1860}
+    - Class: 114
+      Script: {instanceID: 2550}
+    - Class: 114
+      Script: {instanceID: 2740}
+    - Class: 114
+      Script: {instanceID: 3016}
+    - Class: 114
+      Script: {instanceID: 4868}
+    - Class: 114
+      Script: {instanceID: 5384}
+    - Class: 114
+      Script: {instanceID: 5536}
+    - Class: 114
+      Script: {instanceID: 5840}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -335,6 +532,12 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: da50e68a788d25bab667350a025940a0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -371,7 +574,7 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreakMessageListener
   - hash:
       serializedVersion: 2
-      Hash: ffa9df91191417954325eced073c917c
+      Hash: 10464e903815524990904bdb1b9fe865
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -521,7 +724,7 @@ ScriptsOnlyBuild:
     className: UnityOnScrollMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 3a82d5194d219275b2bc90f8f0e45ca5
+      Hash: ff5aaadcf6dc17c8fe067dbe867fb578
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: General
@@ -551,7 +754,7 @@ ScriptsOnlyBuild:
     className: UnityOnSelectMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
+      Hash: d4369c90f20000fdcb1beaa4bf738e75
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Turn_by_Turn
@@ -579,6 +782,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshPro
+  - hash:
+      serializedVersion: 2
+      Hash: 3c75f75b51a05c7738c206cef0bfc95a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Trash_Card
   - hash:
       serializedVersion: 2
       Hash: c343da5828fddd0a899e69eb0f447fd5
@@ -701,12 +910,6 @@ ScriptsOnlyBuild:
     className: UnityOnCancelMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 687ef7367ebac1e57f0e9da567511691
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Start_Game
-  - hash:
-      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -737,13 +940,13 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 6af3cb31827c6440e3efe3aef72aba8a
+      Hash: 9e36a6dc7eae030ac5be20de31ed2922
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Mazo
   - hash:
       serializedVersion: 2
-      Hash: 55082a4ccdd5406e03c36a3ec55942ed
+      Hash: 992b2a3131e4d6c69be0708c627084cd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Cartas_Unidad
@@ -845,6 +1048,12 @@ ScriptsOnlyBuild:
     className: StateGraphAsset
   - hash:
       serializedVersion: 2
+      Hash: 055300f6b3d810452643f15a2f107ba6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Cartas_Leader
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -855,6 +1064,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: End_Game
   - hash:
       serializedVersion: 2
       Hash: 75fc310f39f07288ab8bfbb34c6c1180
@@ -927,6 +1142,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: c92bc7badca034c8bf25d9c88c8c463f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Start_Game
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1043,6 +1264,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Camara_video_Controller
+  - hash:
+      serializedVersion: 2
       Hash: 1acffdc47de1ca014dae3d384c3d1086
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1113,22 +1340,11 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Menu
-  - hash:
-      serializedVersion: 2
-      Hash: e83159ff74ec56e8871e01c06b12cc64
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Camara_video_Controller
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Juego.unity
   - Assets/Scenes/Creditos.unity
   - Assets/Scenes/Opciones.unity
+  - Assets/Scenes/End_Game.unity
   playerPath: D:/Programacion CC/CC/Proyecto CC/Gae/Gwent.exe
