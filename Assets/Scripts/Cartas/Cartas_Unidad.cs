@@ -9,7 +9,7 @@ public class Cartas_Unidad : MonoBehaviour
     public int atk;
     public int habilidad = 0;
     public string hability;
-    private bool Activado = false;
+    public bool Activado = false;
     GameManager Manager;
 
     private void Start()
