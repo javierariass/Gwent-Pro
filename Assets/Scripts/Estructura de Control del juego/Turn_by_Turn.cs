@@ -18,40 +18,44 @@ public class Turn_by_Turn : MonoBehaviour
     //Funcion cambio de turno
     public void Turn_Switch()
     {
-        if (!ronda)
+        if(!gameManager.inicio1 || !gameManager.inicio2)
         {
-            Verificar_Ronda();
-            if (gameManager.turno == 1 && !gameManager.turn2_end)
+            if (!ronda)
             {
-                gameManager.P1.SetActive(false); //Desactivar Camara jugador 1
-                gameManager.P2.SetActive(true);  //Activar Camara jugador 2
-
-                if (!gameManager.turn2_end)
+                Verificar_Ronda();
+                if (gameManager.turno == 1 && !gameManager.turn2_end)
                 {
-                    gameManager.turno = 2;
-                }
-            }
+                    gameManager.P1.SetActive(false); //Desactivar Camara jugador 1
+                    gameManager.P2.SetActive(true);  //Activar Camara jugador 2
 
-            else if (!gameManager.turn1_end)
-            {
-                gameManager.P2.SetActive(false); //Desactivar Camara jugador 2
-                gameManager.P1.SetActive(true);  //Activar Camara jugador 1
-                if (!gameManager.turn1_end)
+                    if (!gameManager.turn2_end)
+                    {
+                        gameManager.turno = 2;
+                    }
+                }
+
+                else if (!gameManager.turn1_end)
                 {
-                    gameManager.turno = 1;
+                    gameManager.P2.SetActive(false); //Desactivar Camara jugador 2
+                    gameManager.P1.SetActive(true);  //Activar Camara jugador 1
+                    if (!gameManager.turn1_end)
+                    {
+                        gameManager.turno = 1;
+                    }
                 }
-            }
-            if (gameManager.turn1_end && gameManager.turn2_end)
-            {
-                End_Round();
-            }
+                if (gameManager.turn1_end && gameManager.turn2_end)
+                {
+                    End_Round();
+                }
 
-            else
-            {
-                gameManager.Turn_Invoque = false; //Permitir invocar carta
-                gameManager.Lure = null;
+                else
+                {
+                    gameManager.Turn_Invoque = false; //Permitir invocar carta
+                    gameManager.Lure = null;
+                }
             }
         }
+        
     }
 
     public void Verificar_Ronda()
@@ -116,18 +120,23 @@ public class Turn_by_Turn : MonoBehaviour
 
     public bool End_Game()
     {
-        if (gameManager.ronda1 == 2)
+        if (gameManager.ronda1 == 2 && gameManager.ronda2 != 2)
         {
             Ganador.text = "Las fuerzas del bien han ganado la guerra";
             Continue.SetActive(true);
             return true;
         }
-        if (gameManager.ronda2 == 2)
+        if (gameManager.ronda2 == 2 && gameManager.ronda1 != 2)
         {
             Ganador.text = "Las fuerzas del mal han ganado la guerra";
             Continue.SetActive(true);
 
             return true;
+        }
+        if(gameManager.ronda2 == 2 && gameManager.ronda1 == 2)
+        {
+            Ganador.text = "La Guerra ha terminado en tregua";
+            Continue.SetActive(true);
         }
 
         return false;

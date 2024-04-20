@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - Boton_Efecto
     - Camara_video_Controller
     - Cartas_Especiales
+    - Cartas_Leader
     - Cartas_Unidad
     - End_Game
     - GameManager
@@ -191,8 +192,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
     - Class: 222
@@ -321,6 +320,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4616}
     - Class: 114
       Script: {instanceID: 4868}
+    - Class: 114
+      Script: {instanceID: 5342}
     - Class: 114
       Script: {instanceID: 5384}
     - Class: 114
@@ -574,7 +575,7 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreakMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 10464e903815524990904bdb1b9fe865
+      Hash: f85db6de0c79a1eded55630c7fac1913
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1048,7 +1049,7 @@ ScriptsOnlyBuild:
     className: StateGraphAsset
   - hash:
       serializedVersion: 2
-      Hash: 055300f6b3d810452643f15a2f107ba6
+      Hash: c7419679286dd7326f44c7fe2cbf1a14
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Cartas_Leader
@@ -1347,4 +1348,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Creditos.unity
   - Assets/Scenes/Opciones.unity
   - Assets/Scenes/End_Game.unity
-  playerPath: D:/Programacion CC/CC/Proyecto CC/Gae/Gwent.exe
+  playerPath: D:/Programacion CC/CC/Proyecto CC/Juego/Gwent.exe

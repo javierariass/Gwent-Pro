@@ -2806,13 +2806,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  poder_jugador: 0
+  poder_enemigo: 0
   ronda1: 0
   ronda2: 0
   cartas_Selected: 0
   Turn_Invoque: 1
   turn1_end: 0
   turn2_end: 0
-  inicio1: 0
+  inicio1: 1
   inicio2: 1
   Lure: {fileID: 0}
   Pos_lure: 0
