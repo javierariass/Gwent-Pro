@@ -58,8 +58,6 @@ public class Turn_by_Turn : MonoBehaviour
         
     }
 
-
-    //metodo para verificar si ya el jugador paso ronda
     public void Verificar_Ronda()
     {
         if (gameManager.turno == 1 && !gameManager.Turn_Invoque)
@@ -72,8 +70,6 @@ public class Turn_by_Turn : MonoBehaviour
             gameManager.turn2_end = true;
         }
     }
-
-    //Metodo para terminar ronda e iniciar la nueva robando dos cartas
     public void End_Round()
     {
         gameManager.turn1_end = false;
@@ -92,7 +88,6 @@ public class Turn_by_Turn : MonoBehaviour
         
     }
 
-    //Metodo para vaciar el campo al terminar la ronda
     public void Vaciar_Campo()
     {
 
@@ -123,7 +118,6 @@ public class Turn_by_Turn : MonoBehaviour
         
     }
 
-    //Metodo para determinar fin del juego
     public bool End_Game()
     {
         if (gameManager.ronda1 == 2 && gameManager.ronda2 != 2)
@@ -147,8 +141,6 @@ public class Turn_by_Turn : MonoBehaviour
 
         return false;
     }
-
-    //Temporizador de cambio de ronda
     IEnumerator Cambiar_Ronda()
     {
         yield return new WaitForSeconds(3);

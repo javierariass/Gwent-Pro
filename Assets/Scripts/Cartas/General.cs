@@ -105,8 +105,8 @@ public class General : MonoBehaviour
                     {
                         gameObject.transform.SetParent(gameManager.P2.transform);
                     }
-                   
-                 
+                    invocada = false;
+                    gameManager.Turn_Invoque = true;
                     for (int i = 0; i < Mazo.GetComponent<Mazo>().Hand.Length; i++)
                     {
                         if (Mazo.GetComponent<Mazo>().Hand[i] == card)
@@ -120,11 +120,8 @@ public class General : MonoBehaviour
                         {
                             gameManager.Cartas_Campo[i] = card;
                         }
-                        
+                        gameManager.Turn_Invoque = true;
                     }
-                    gameManager.Turn_Invoque = true;
-                    invocada = false;
-                    gameObject.GetComponent<Cartas_Unidad>().Activado = false;
                 }
                 
             }               

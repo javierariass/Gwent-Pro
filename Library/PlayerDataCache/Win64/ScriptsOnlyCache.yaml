@@ -947,7 +947,7 @@ ScriptsOnlyBuild:
     className: Mazo
   - hash:
       serializedVersion: 2
-      Hash: b54222ed0b6a4346e94c766bc14a2061
+      Hash: 992b2a3131e4d6c69be0708c627084cd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Cartas_Unidad
@@ -1348,4 +1348,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Creditos.unity
   - Assets/Scenes/Opciones.unity
   - Assets/Scenes/End_Game.unity
-  playerPath: D:/Juegos/Clan Wars/Clan Wars.exe
+  playerPath: D:/Programacion CC/CC/Proyecto CC/Juego/Gwent.exe

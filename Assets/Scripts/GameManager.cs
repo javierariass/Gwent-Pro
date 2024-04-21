@@ -37,8 +37,6 @@ public class GameManager : MonoBehaviour
         Power();
         Cartas_Back_Check();
     }
-
-    //Metodo para definir poder de los jugadores en todo momento del juego
     public void Power()
     {
         poder_jugador = 0;
@@ -70,8 +68,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    //Metodo para reiniciar indicador de poder y determinar quien gano la ronda
     public string Reset_Power()
     {
         string jugador = "";
@@ -90,16 +86,14 @@ public class GameManager : MonoBehaviour
         if(poder_jugador == poder_enemigo)
         {
             jugador = "Empate";
-            ronda1++;
-            ronda2++;
         }
         poder_enemigo = 0;
         poder_jugador = 0;
+        ronda1++;
+        ronda2++;
         return jugador;
     }
 
-
-    //Metodo para esconder cartas del rival
     public void Cartas_Back_Check()
     {
         for (int i = 0; i < mazo1.GetComponent<Mazo>().Hand.Length; i++)
