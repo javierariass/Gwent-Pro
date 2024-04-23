@@ -19,7 +19,11 @@ MonoBehaviour:
     width: 1600
     height: 809
   m_ShowMode: 4
-  m_Title: Game
+<<<<<<< HEAD
+  m_Title: Project
+=======
+  m_Title: Hierarchy
+>>>>>>> parent of a9395a31 (Revert "Continuan los arreglos")
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +123,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 123
+<<<<<<< HEAD
+  controlID: 64
+=======
+  controlID: 857
+>>>>>>> parent of a9395a31 (Revert "Continuan los arreglos")
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +152,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 52
+<<<<<<< HEAD
+  controlID: 65
+=======
+  controlID: 788
+>>>>>>> parent of a9395a31 (Revert "Continuan los arreglos")
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +181,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 53
+<<<<<<< HEAD
+  controlID: 43
+=======
+  controlID: 789
+>>>>>>> parent of a9395a31 (Revert "Continuan los arreglos")
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +205,8 @@ MonoBehaviour:
     y: 0
     width: 309
     height: 524
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -215,8 +231,8 @@ MonoBehaviour:
     y: 0
     width: 997
     height: 524
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 14}
@@ -271,8 +287,8 @@ MonoBehaviour:
     y: 0
     width: 294
     height: 759
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -408,9 +424,13 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: b4080000
       m_LastClickedID: 0
-      m_ExpandedIDs: 00e0ffff3ae0ffff80e1ffff8ae1ffff94e1ffffc2e1ffffe4e1ffff50e3ffffeef1ffff2cf3ffff8af3ffff6af4ffffb2f4fffffaf4fffff6f7ffff40f8ffff82f9ffff88f9ffff8ef9ffffbaf9ffffd8f9ffff34fbffff5e7a0000
+<<<<<<< HEAD
+      m_ExpandedIDs: 34fbffff
+=======
+      m_ExpandedIDs: 00bdffff40bdffff66beffff6cbeffff72beffff9cbeffffbabeffff50c2ffff8ec2ffffb4c3ffffbac3ffffc0c3ffffeac3ffff08c4ffff90d0ffffced0fffff4d1fffffad1ffff00d2ffff2ad2ffff48d2ffff30d6ffff6ed6ffff98d7ffffa2d7ffffacd7ffffdad7fffffcd7ffff4aeaffff84eaffffc6ebffffccebffffd2ebfffffeebffff1cecffff60f2ffff34fbffff2a6e0000406e000088920000d6920000dc920000
+>>>>>>> parent of a9395a31 (Revert "Continuan los arreglos")
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -876,22 +896,38 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+<<<<<<< HEAD
+    - Assets/Scripts
+=======
+    - Assets/Sprites/Extras
+>>>>>>> parent of a9395a31 (Revert "Continuan los arreglos")
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 82
   m_LastFolders:
-  - Assets/Scenes
+<<<<<<< HEAD
+  - Assets/Scripts
+  m_LastFoldersGridSize: 82
+=======
+  - Assets/Sprites/Extras
   m_LastFoldersGridSize: -1
+>>>>>>> parent of a9395a31 (Revert "Continuan los arreglos")
   m_LastProjectPath: C:\Users\Javier\Documents\Gwent-Pro
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 725c0000
-    m_LastClickedID: 23666
-    m_ExpandedIDs: 00000000645c0000665c0000745c000000ca9a3bffffff7f
+    m_SelectedIDs: e0560000
+    m_LastClickedID: 22240
+    m_ExpandedIDs: 00000000d0560000d256000000ca9a3bffffff7f
+=======
+    scrollPos: {x: 0, y: 94}
+    m_SelectedIDs: 7c610000
+    m_LastClickedID: 24956
+    m_ExpandedIDs: 00000000d0560000d2560000e0560000e456000000ca9a3bffffff7f
+>>>>>>> parent of a9395a31 (Revert "Continuan los arreglos")
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -919,7 +955,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000645c0000665c0000
+<<<<<<< HEAD
+    m_ExpandedIDs: 00000000d0560000d2560000
+=======
+    m_ExpandedIDs: 00000000d0560000d256000000ca9a3bffffff7f
+>>>>>>> parent of a9395a31 (Revert "Continuan los arreglos")
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -947,7 +987,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000b8620100f86201006a5c0000
+    m_ExpandedInstanceIDs: c6230000b8620100f86201006a5c00008687000092870000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -972,7 +1012,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 82
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
 --- !u!114 &17
@@ -1049,7 +1089,7 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Debug
+    m_Text: Inspector
     m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
@@ -1071,7 +1111,7 @@ MonoBehaviour:
   m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
-  m_InspectorMode: 1
+  m_InspectorMode: 0
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
