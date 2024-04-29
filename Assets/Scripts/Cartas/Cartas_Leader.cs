@@ -13,12 +13,16 @@ public class Cartas_Leader : MonoBehaviour
     {
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
     }
+
+    //Funcion para mostrar habilidad del lider en la descripcion del UI
     private void OnMouseEnter()
     {
         GetComponent<General>().descripcion.text += "\n" + Habilidad;
     }
+    //Funcion para activar habilidad del lider
     private void OnMouseDown()
     {
+        //Lider Elfico
         if (num == 1 && manager.turno == 1)
         {
             if (!activated)
@@ -35,6 +39,8 @@ public class Cartas_Leader : MonoBehaviour
                 activated = true;
             }
         }
+
+        //Lider Orco
 
         if (num == 2 && manager.turno == 2 && !manager.Turn_Invoque)
         {

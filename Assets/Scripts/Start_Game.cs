@@ -11,6 +11,7 @@ public class Start_Game : MonoBehaviour
     public RawImage[] image = new RawImage[10];
     public GameObject GameObject;
 
+    //Boton para robar carta al dar click
     private void OnMouseDown()
     {
         if (!inicio)
@@ -27,6 +28,7 @@ public class Start_Game : MonoBehaviour
         }
     }
 
+    //Boton para mostrar lista de cartas para desechar 2
     public void Colocar()
     {
         
@@ -42,6 +44,8 @@ public class Start_Game : MonoBehaviour
             cant = 0;
         }
     }
+
+    //funcion para cambiar carta por otra
     public void Cambiar1(int num, Mazo mazos)
     {
         Destroy(mazos.Hand[num]);
@@ -56,6 +60,7 @@ public class Start_Game : MonoBehaviour
         }
     }
 
+    //funcionar Terminar fase de descarte
     public void Cerrar()
     {
         for (int i = 0; i < image.Length; i++)

@@ -69,7 +69,6 @@
     <Compile Include="Assets\Scripts\Cartas\Cartas_Leader.cs" />
     <Compile Include="Assets\Scripts\Estructura de Control del juego\Animator_Function.cs" />
     <Compile Include="Assets\Scripts\End_Game.cs" />
-    <Compile Include="Assets\Scripts\Estructura de Control del juego\Selected_card.cs" />
     <Compile Include="Assets\Scripts\Cartas\Cartas_Especiales.cs" />
     <Compile Include="Assets\Scripts\Start_Game.cs" />
     <Compile Include="Assets\Scripts\Estructura de Control del juego\Camara_video_Controller.cs" />

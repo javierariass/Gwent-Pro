@@ -8,6 +8,7 @@ public class Trash_Card : MonoBehaviour
     public Start_Game game;
     public int num = 0;
 
+    //Funcion para botar cartas
     public void Activar()
     {
         if(GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>().turno == 1)
